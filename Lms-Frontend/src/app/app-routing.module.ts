@@ -9,9 +9,9 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'student',component:StudentComponent},
-{path:'stuexams',component:ExamComponent},
-{path:'stufeedbacks',component:FeedbackComponent},
-{path:'lrngmaterials',component:LearningMaterialsComponent}];
+{path:'student/stuexams',component:ExamComponent},
+{path:'student/stufeedbacks',component:FeedbackComponent},
+{path:'student/lrngmaterials',component:LearningMaterialsComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
