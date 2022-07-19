@@ -17,11 +17,7 @@ import { AdmTarainerComponent } from './admin/adm-tarainer/adm-tarainer.componen
 import { AdmStudentComponent } from './admin/adm-student/adm-student.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'student',component:StudentComponent},
-{path:'stuexams',component:ExamComponent},
-{path:'stufeedbacks',component:FeedbackComponent},
-{path:'lrngmaterials',component:LearningMaterialsComponent},
+{path:'',component:HomeComponent},
 {path:'adlogin',component:AdminLoginComponent},
 {path:'stulogin',component:StudentLoginComponent},
 {path:'tralogin',component:TrainerLoginComponent},
@@ -31,7 +27,11 @@ const routes: Routes = [
 {path:'stuaccess',component:AdmStuAccessComponent},
 {path:'traaccess',component:AdmTraAccessComponent},
 {path:'trahome',component:AdmTarainerComponent},
-{path:'stuhome',component:AdmStudentComponent}];
+{path:'stuhome',component:AdmStudentComponent},
+{path:'student/stuexams',component:ExamComponent},
+{path:'student/stufeedbacks',component:FeedbackComponent},
+{path:'student/lrngmaterials',component:LearningMaterialsComponent}];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
