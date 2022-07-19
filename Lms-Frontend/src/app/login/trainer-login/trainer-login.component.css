@@ -1,0 +1,31 @@
+
+.login{
+    margin-top: 10%;
+    height: 60%;
+}
+h1{
+    text-align: center;
+     padding-bottom: 10px;
+    color: blue ;
+}
+
+form{
+    margin-left: 35%;
+    margin-right: 20%;
+    width: 30%;
+    height: 60%;
+   padding:50px;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+   border-radius: 7px;
+   background-color: white;
+   letter-spacing: 0.5px;
+   background-color:lavender;
+   
+}
+
+a{
+    font-size: large;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+   }

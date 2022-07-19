@@ -1,0 +1,166 @@
+<div class="all">
+    <form class="form col-sm-6" #traSignup="ngForm" (ngSubmit)="trainerSignup()">
+      <h1 class="title">SIGN UP</h1>
+      <!-- name -->
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" 
+          class="form-control" 
+          id="name"
+          name="trainername"
+          [(ngModel)]="Trainer.name"
+          #trainername="ngModel"
+          placeholder="Ender full name"
+          [class.is-invalid]="trainername.invalid && trainername.touched"
+         pattern="[A-Za-z\s]{2,15}"
+         required>
+          <!-- name validation -->
+          <small class="text-danger" [class.d-none]="trainername.valid || trainername.untouched">Ender valid name</small>
+        </div>
+        <!-- address -->
+        <div class="mb-3">
+            <label class="form-label">Adress</label>
+            <input type="text"
+             class="form-control" 
+             id="address"
+             name="traineraddress"
+             [(ngModel)]="Trainer.address"
+             #traineraddress="ngModel"
+             placeholder="Ender adress"
+             [class.is-invalid]="traineraddress.invalid && traineraddress.touched"
+             pattern="[A-Za-z\s0-9,.()]{2,200}"
+             required>
+             <small class="text-danger" [class.d-none]="traineraddress.valid || traineraddress.untouched">Ender valid address</small>
+          </div>
+         <!-- email -->
+          <div class="mb-3">
+            <label  class="form-label">Email</label>
+            <input type="email"
+            class="form-control" 
+            id="email" 
+            name="trainertemail"
+            [(ngModel)]="Trainer.email"
+            #traineremail="ngModel"
+            placeholder="Ender email id"
+            [class.is-invalid]="traineremail.invalid && traineremail.touched"
+            pattern="^[a-zA-z0-9\.%_-]+@[a-zA-Z0-9%_]+\.[a-z]{2,4}(.[a-z]{2,3})?"
+            required>
+         <!-- email validation -->
+         <small class="text-danger" *ngIf="traineremail.touched && !traineremail.valid">
+          <div *ngIf="traineremail.errors?.['required']">
+            Email Is Required
+              </div>
+          <div *ngIf="traineremail.errors?.['pattern']">
+               Enter valid email address
+              </div></small>
+          </div>
+          <!-- phone number -->
+          <div class="mb-3">
+            <label class="form-label">Phone No</label>
+            <input type="text" 
+            class="form-control" 
+            id="phone"
+            name="trainerph"
+             [(ngModel)]="Trainer.ph"
+             #trainerph="ngModel"
+             placeholder="Ender phone no"
+             [class.is-invalid]="trainerph.invalid && trainerph.touched"
+             pattern="[0-9\s]{10,10}"
+             required>
+             <!-- phone validation -->
+             <small class="text-danger" *ngIf="trainerph.touched && !trainerph.valid">
+              <div *ngIf="trainerph.errors?.['required']">
+                Phone number is required
+                  </div>
+              <div *ngIf="trainerph.errors?.['pattern']">
+                   Enter valid phone number
+                  </div></small>
+          </div>
+         <!-- education qualification -->
+          <div class="mb-3">
+            <label  class="form-label">Highest Educational Qualification</label>
+            <input type="text" 
+            class="form-control"
+             id="education" 
+             name="traineredu"
+             [(ngModel)]="Trainer.edu"
+             #traineredu="ngModel"
+             placeholder="Ender qualification"
+             [class.is-invalid]="traineredu.invalid && traineredu.touched"
+            pattern="[A-Za-z\s0-9\+.]{2,25}"
+             required>
+             <!-- validation -->
+             <small class="text-danger" [class.d-none]="traineredu.valid || traineredu.untouched">Enter valid qualification</small>
+          </div>
+          <!-- skill -->
+          <div class="mb-3">
+            <label  class="form-label">Skill Set</label>
+            <input type="text" 
+            class="form-control"
+             id="skill" 
+             name="trainerskill"
+             [(ngModel)]="Trainer.skill"
+             #trainerskill="ngModel"
+             placeholder="Ender skill set"
+             [class.is-invalid]="trainerskill.invalid && trainerskill.touched"
+            pattern="[A-Za-z\s0-9\+.]{2,25}"
+             required>
+             <!-- validation -->
+             <small class="text-danger" [class.d-none]="trainerskill.valid || trainerskill.untouched">Enter valid skill set</small>
+          </div>
+          <!-- experience -->
+          <div class="mb-3">
+            <label  class="form-label">Experience</label>
+            <input type="text" 
+            class="form-control"
+             id="exp" 
+             name="trainerexp"
+             [(ngModel)]="Trainer.exp"
+             #trainerexp="ngModel"
+             placeholder="Ender years of experience in teaching"
+             [class.is-invalid]="trainerexp.invalid && trainerexp.touched"
+             pattern="[0-9\+.]{1,2}"
+              required>
+             <!-- validation -->
+             <small class="text-danger" [class.d-none]="trainerexp.valid || trainerexp.untouched">Enter valid experience</small>
+          </div>
+          <!-- password -->
+        <div class="mb-3">
+          <label  class="form-label">Password</label>
+          <input type="password"
+           class="form-control" 
+           id="pwd"
+           name="trainerpwd"
+             [(ngModel)]="Trainer.pwd"
+             #trainerpwd="ngModel"
+             placeholder="Ender Password"
+             [class.is-invalid]="trainerpwd.invalid && trainerpwd.touched"
+             placeholder="Ender Password"
+             pattern="(?=^.{6,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+             required>
+             <!-- validation -->
+             <small class="text-danger"   *ngIf="trainerpwd.touched && !trainerpwd.valid">
+              <div *ngIf="trainerpwd.errors?.['required']">
+               Password is required
+                  </div>
+              <div *ngIf="trainerpwd.errors?.['pattern']">
+                Password must contain atleast 1 capital letter,1 small letter,1 digit and 1 special character and require minimum 6 characters
+                  </div></small>
+        </div>
+        <!-- <div class="mb-3">
+          <label  class="form-label">Re-type Password</label>
+          <input type="password"
+           class="form-control" 
+           id="pwd"
+           name="studentpwd"
+             [(ngModel)]="Trainer.repwd"
+             #studentpwd="ngModel"
+             placeholder="Ender Password">
+        </div> -->
+        <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary" [disabled]="traSignup.form.invalid">Sign Up</button>
+      </div>
+      <br>
+      <a routerLink="/tralogin">Already have an account?</a>
+      </form>
+    </div>
