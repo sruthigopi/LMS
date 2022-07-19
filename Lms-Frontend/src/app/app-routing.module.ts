@@ -15,6 +15,7 @@ import { AdmStuAccessComponent } from './admin/adm-stu-access/adm-stu-access.com
 import { AdmTraAccessComponent } from './admin/adm-tra-access/adm-tra-access.component';
 import { AdmTarainerComponent } from './admin/adm-tarainer/adm-tarainer.component';
 import { AdmStudentComponent } from './admin/adm-student/adm-student.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
@@ -24,10 +25,10 @@ const routes: Routes = [
 {path:'stureg',component:StudentSignupComponent},
 {path:'trareg',component:TrainerSignupComponent},
 {path:'admin',component:AdmNavComponent},
-{path:'stuaccess',component:AdmStuAccessComponent},
-{path:'traaccess',component:AdmTraAccessComponent},
-{path:'trahome',component:AdmTarainerComponent},
-{path:'stuhome',component:AdmStudentComponent},
+{path:'stuaccess',canActivate:[AuthGuard],component:AdmStuAccessComponent},
+{path:'traaccess',canActivate:[AuthGuard],component:AdmTraAccessComponent},
+{path:'trahome',canActivate:[AuthGuard],component:AdmTarainerComponent},
+{path:'stuhome',canActivate:[AuthGuard],component:AdmStudentComponent},
 {path:'student/stuexams',component:ExamComponent},
 {path:'student/stufeedbacks',component:FeedbackComponent},
 {path:'student/lrngmaterials',component:LearningMaterialsComponent}];
