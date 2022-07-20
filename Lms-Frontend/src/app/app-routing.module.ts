@@ -29,6 +29,7 @@ const routes: Routes = [
 {path:'traaccess',canActivate:[AuthGuard],component:AdmTraAccessComponent},
 {path:'trahome',canActivate:[AuthGuard],component:AdmTarainerComponent},
 {path:'stuhome',canActivate:[AuthGuard],component:AdmStudentComponent},
+{path:'student',component:StudentComponent},
 {path:'student/stuexams',component:ExamComponent},
 {path:'student/stufeedbacks',component:FeedbackComponent},
 {path:'student/lrngmaterials',component:LearningMaterialsComponent}];
