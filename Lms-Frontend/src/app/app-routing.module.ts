@@ -16,6 +16,7 @@ import { AdmTraAccessComponent } from './admin/adm-tra-access/adm-tra-access.com
 import { AdmTarainerComponent } from './admin/adm-tarainer/adm-tarainer.component';
 import { AdmStudentComponent } from './admin/adm-student/adm-student.component';
 import { AuthGuard } from './auth.guard';
+import { CoursesComponent } from './courses/courses.component';
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
@@ -32,7 +33,9 @@ const routes: Routes = [
 {path:'student',component:StudentComponent},
 {path:'student/stuexams',component:ExamComponent},
 {path:'student/stufeedbacks',component:FeedbackComponent},
-{path:'student/lrngmaterials',component:LearningMaterialsComponent}];
+{path:'student/lrngmaterials',component:LearningMaterialsComponent},
+{path:'courses',component:CoursesComponent},
+];
 
 
 @NgModule({
