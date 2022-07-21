@@ -26,6 +26,10 @@ import { AdmTraAccessComponent } from './admin/adm-tra-access/adm-tra-access.com
 import { AdmStudentComponent } from './admin/adm-student/adm-student.component';
 import { AdmTarainerComponent } from './admin/adm-tarainer/adm-tarainer.component';
 import { CoursesComponent } from './courses/courses.component';
+import { Exam1Component } from './student/exam/exam1/exam1.component';
+import { Feedback1Component } from './student/feedback/feedback1/feedback1.component';
+import { Exam2Component } from './student/exam/exam2/exam2.component';
+import { Feedback2Component } from './student/feedback/feedback2/feedback2.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,11 @@ import { CoursesComponent } from './courses/courses.component';
     AdmTraAccessComponent,
     AdmStudentComponent,
     AdmTarainerComponent,
-    CoursesComponent
+    CoursesComponent,
+    Exam1Component,
+    Feedback1Component,
+    Exam2Component,
+    Feedback2Component
   ],
   imports: [
     BrowserModule,
