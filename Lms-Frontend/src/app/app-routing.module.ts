@@ -1,3 +1,7 @@
+import { Feedback2Component } from './student/feedback/feedback2/feedback2.component';
+import { Exam2Component } from './student/exam/exam2/exam2.component';
+import { Feedback1Component } from './student/feedback/feedback1/feedback1.component';
+import { Exam1Component } from './student/exam/exam1/exam1.component';
 import { LearningMaterialsComponent } from './student/learning-materials/learning-materials.component';
 import { FeedbackComponent } from './student/feedback/feedback.component';
 import { ExamComponent } from './student/exam/exam.component';
@@ -18,6 +22,7 @@ import { AdmStudentComponent } from './admin/adm-student/adm-student.component';
 import { AuthGuard } from './auth.guard';
 import { UpdateStuComponent } from './admin/update-stu/update-stu.component';
 import { UpdateTraComponent } from './admin/update-tra/update-tra.component';
+import { CoursesComponent } from './courses/courses.component';
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
@@ -34,8 +39,16 @@ const routes: Routes = [
 {path:'stuudt',component:UpdateStuComponent},
 {path:'traudt',component:UpdateTraComponent},
 {path:'student/stuexams',component:ExamComponent},
+{path:'student/stuexams/exam1',component:Exam1Component},
+{path:'student/stuexams/exam2',component:Exam2Component},
 {path:'student/stufeedbacks',component:FeedbackComponent},
-{path:'student/lrngmaterials',component:LearningMaterialsComponent}];
+{path:'student/stufeedbacks/feedback-1',component:Feedback1Component},
+{path:'student/stufeedbacks/feedback-2',component:Feedback2Component},
+{path:'student',component:StudentComponent},
+{path:'student/lrngmaterials',component:LearningMaterialsComponent},
+{path:'courses',component:CoursesComponent},
+
+];
 
 
 @NgModule({

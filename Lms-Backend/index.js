@@ -136,7 +136,7 @@ app.post('/trainersignup',(req,res)=>{
              console.log('FAILED TO LOGIN trainer');
              res.status(401).send('invalid credential');
          }
-        })
+        });
          })
 
     // end signup and login

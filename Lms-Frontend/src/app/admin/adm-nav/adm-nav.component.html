@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand">ADMIN</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,8 +11,8 @@
               ALLOW ACCESS
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" routerLink="/stuaccess" *ngIf="authService.getTokenAdmin()">STUDENTS</a></li>
-              <li><a class="dropdown-item" routerLink="/traaccess" *ngIf="authService.getTokenAdmin()">TRAINERS</a></li>
+              <li><a class="dropdown-item" routerLink="/stuaccess" >STUDENTS</a></li>
+              <li><a class="dropdown-item" routerLink="/traaccess">TRAINERS</a></li>
             </ul>
           </li>
           <li class="nav-item">
