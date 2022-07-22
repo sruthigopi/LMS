@@ -28,11 +28,11 @@ this.authService.studentLogin(this.Student)
 
     console.log('sucessfully loggedin');
     localStorage.setItem('token',res.token);
-    this.router.navigate(['/courses']);
+    this.router.navigate(['student/stuexams']);
  
 },
 (error:HttpErrorResponse)=>{
-alert('Incorrect Email Adderess Or Password');
+alert('Admin must entrol your profile for logging');
 
 },
 )

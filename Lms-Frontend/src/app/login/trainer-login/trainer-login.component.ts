@@ -27,11 +27,13 @@ export class TrainerLoginComponent implements OnInit {
     
         console.log('sucessfully loggedin');
         localStorage.setItem('token3',res.token3);
-        this.router.navigate(['/trainer']);
+          // routed to chane to trainer 
+        this.router.navigate(['trainer']);
+       
      
     },
     (error:HttpErrorResponse)=>{
-    alert('Incorrect Email Adderess Or Password');
+    alert('Admin must entrol your profile for loging');
     
     },
     )

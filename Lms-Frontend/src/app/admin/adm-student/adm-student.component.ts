@@ -36,5 +36,9 @@ export class AdmStudentComponent implements OnInit {
       this.ngOnInit();
      });
   }
-
+// edit student
+editStudent(student:any){
+  localStorage.setItem("editStudentId",student._id.toString())
+  this.router.navigate(['stuudt']);
+}
 }

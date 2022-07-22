@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AccessService } from 'src/app/access.service';
+import { AccessService } from '../../access.service';
 import { TrainerModel } from '../adm-tra-access/traineraccess.model';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./adm-tarainer.component.css']
 })
 export class AdmTarainerComponent implements OnInit {
-
   trainers:TrainerModel |any;
   nodata=false;
 
@@ -32,5 +31,10 @@ export class AdmTarainerComponent implements OnInit {
       this.trainers =this.trainers.filter((p: any)=>p!== trainer);
       this.ngOnInit();
      });
+  }
+  // edit tariner
+  editTrainer(trainer:any){
+    localStorage.setItem("editTrainerId",trainer._id.toString())
+    this.router.navigate(['traudt']);
   }
 }

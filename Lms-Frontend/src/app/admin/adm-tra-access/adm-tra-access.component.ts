@@ -17,9 +17,10 @@ export class AdmTraAccessComponent implements OnInit {
   constructor(private accessService:AccessService) { }
 
   ngOnInit(): void {
+    console.log('deatails');
     this.accessService.getTrainerdetails().subscribe((data)=>{
       this.trainers=JSON.parse(JSON.stringify(data));
-      // find any student is present to approve
+      // find any trainer is present to approve
      
       if (this.trainers.length === 0) {
         this.nodata=true;

@@ -37,6 +37,7 @@ function verifyToken(req,res,next){
 
 
 // signup and login portion
+
 // student signup
 app.post('/studentsignup',(req,res)=>{
     let studentData=req.body
@@ -60,7 +61,7 @@ app.post('/studentlogin',(req,res)=>{
   
     let studentData=req.body
    
-    StudentData.findOne({"studentemail":studentData.studentemail, "studentpwd":studentData.studentpwd},(err,studentData)=>{
+    StudentData.findOne({"studentemail":studentData.studentemail, "studentpwd":studentData.studentpwd,isApproved:"true"},(err,studentData)=>{
      if(studentData){
          console.log('student SUCCESSFULLY LOGGEDIN');
  
@@ -90,6 +91,7 @@ app.post('/adminlogin',(req,res)=>{
     else{
         let payload = {subject:admineusername+adminepwd}
         let token1 = jwt.sign(payload,'secretkey')
+        console.log('admin logged in');
         res.status(200).send({token1})
     }
     })
@@ -106,8 +108,8 @@ app.post('/trainersignup',(req,res)=>{
         trainerph:trainerData.ph,
         traineredu:trainerData.edu,
         trainerpwd:trainerData.pwd,
-        trainerskill:trainerData.skill,
-        trainerexp:trainerData.exp,
+        // trainerskill:trainerData.skill,
+        // trainerexp:trainerData.exp,
         isApproved:false
        
     }
@@ -122,7 +124,7 @@ app.post('/trainersignup',(req,res)=>{
   
         let trainerData=req.body
        
-        TrainerData.findOne({"traineremail":trainerData.traineremail, "trainerpwd":trainerData.trainerpwd},(err,trainerData)=>{
+        TrainerData.findOne({"traineremail":trainerData.traineremail, "trainerpwd":trainerData.trainerpwd,isApproved:"true"},(err,trainerData)=>{
          if(trainerData){
              console.log('trainer SUCCESSFULLY LOGGEDIN');
      
@@ -146,10 +148,24 @@ app.post('/trainersignup',(req,res)=>{
         res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
         StudentData.find({isApproved:"false"})
         .then(function(students){
+            console.log('details of student need aproval');
             res.send(students);
         });
     });
 
+    // get trainer details for approval
+app.get('/trainerdetails',verifyToken,function(req,res){
+    console.log('tariner acess server')
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+    TrainerData.find({isApproved:"false"})
+    .then(function(trainers){
+        console.log('details of tariner need aproval');
+        console.log(trainers)
+        res.send(trainers);
+       
+    });
+});
 
     // approve students
 app.put('/approve',verifyToken,function(req,res){
@@ -160,7 +176,7 @@ app.put('/approve',verifyToken,function(req,res){
         "isApproved":"true"
     }})
     .then(()=>{
-        console.log('students approval success');
+        console.log('students approval successful');
      res.send()
     });
 })
@@ -170,11 +186,20 @@ app.get('/aprovestulist',function(req,res){
     res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
     StudentData.find({isApproved:"true"})
     .then(function(students){
-        console.log(students);
+        console.log('aproved student list');
         res.send(students);
     });
 });
-
+// approved trainer list
+app.get('/aprovetralist',verifyToken,function(req,res){
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+    TrainerData.find({isApproved:"true"})
+    .then(function(trainers){
+        console.log(trainers);
+        res.send(trainers);
+    });
+});
 // decline students
 app.delete('/declinestu/:id',verifyToken,(req,res)=>{
     id = req.params.id;
@@ -194,21 +219,55 @@ app.delete('/deletestu/:id',verifyToken,(req,res)=>{
     res.send()
    })
 });
-// get trainer details for approval
-app.get('/trainerdetails',verifyToken,function(req,res){
-    res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
-    TrainerData.find({isApproved:"false"})
-    .then(function(trainers){
-        res.send(trainers);
+
+// get studentprof for update
+
+app.get('/:id',verifyToken,(req,res)=>{
+    const id=req.params.id;
+    StudentData.findOne({"_id":id})
+    .then((student)=>{
+     res.send(student)
     });
-});
+})
+
+// update student prof
+app.put('/updatestuprf',verifyToken,(req,res)=>{
+    console.log(req.body);
+    id=req.body._id,
+    studentname=req.body.studentname,
+    studentaddress=req.body.studentaddress,
+    studentemail=req.body.studentemail,
+    studentph=req.body. studentph,
+    studentedu=req.body.studentedu
+    
+    StudentData.findByIdAndUpdate({"_id":id},
+    // find with the id and update with the set ie new productid mans that comming from the frontend
+              {
+                  $set:{
+                    studentname: studentname,
+                    studentaddress:studentaddress,
+                    studentemail:studentemail,
+                    studentph:studentph,
+                    studentedu:studentedu
+                  }
+              }
+    )
+    .then(function(){
+        res.send();
+    })
+})
+
+
+
+
+// tariner in admin
+
 
 // approve trainer
 app.put('/approvetrainer',verifyToken,function(req,res){
-    console.log(req.body);
+   
     id=req.body._id
-
+    console.log(req.body);
     TrainerData.findByIdAndUpdate({"_id":id},{$set:{
         "isApproved":"true"
     }})
@@ -217,16 +276,7 @@ app.put('/approvetrainer',verifyToken,function(req,res){
      res.send()
     });
 })
-// approved trainer list
-app.get('/aprovetralist',verifyToken,function(req,res){
-    res.header("Access-Control-Allow-Origin","*");
-    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
-    TrainerData.find({isApproved:"true"})
-    .then(function(trainers){
-        console.log(trainers);
-        res.send(trainers);
-    });
-});
+
 // decline trainer
 app.delete('/declinetrar/:id',verifyToken,(req,res)=>{
     id = req.params.id;
@@ -245,6 +295,41 @@ app.delete('/deletetra/:id',verifyToken,(req,res)=>{
     res.send()
    })
 });
+// get tarinerprof for update
+
+app.get('/edittra/:id',verifyToken,(req,res)=>{
+    const id=req.params.id;
+    TrainerData.findOne({"_id":id})
+    .then((trainer)=>{
+     res.send(trainer)
+     console.log(trainer)
+    });
+})
+
+// update trainer prof
+app.put('/updatetraprf',verifyToken,(req,res)=>{
+    // console.log(req.body); 
+    id=req.body._id,
+    trainername=req.body.trainername,
+    traineraddress=req.body.traineraddress,
+    trainerph=req.body. trainerph,
+    traineredu=req.body.traineredu
+    
+    TrainerData.findByIdAndUpdate({"_id":id},
+    // find with the id and update with the set ie new productid mans that comming from the frontend
+              {
+                  $set:{
+                    trainername: trainername,
+                    traineraddress:traineraddress,
+                    trainerph:trainerph,
+                    traineredu:traineredu
+                  }
+              }
+    )
+    .then(function(){
+        res.send();
+    })
+})
 
 app.listen(3000,()=>{
     console.log('server is ready');

@@ -25,6 +25,8 @@ import { AdmStuAccessComponent } from './admin/adm-stu-access/adm-stu-access.com
 import { AdmTraAccessComponent } from './admin/adm-tra-access/adm-tra-access.component';
 import { AdmStudentComponent } from './admin/adm-student/adm-student.component';
 import { AdmTarainerComponent } from './admin/adm-tarainer/adm-tarainer.component';
+import { UpdateStuComponent } from './admin/update-stu/update-stu.component';
+import { UpdateTraComponent } from './admin/update-tra/update-tra.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { AdmTarainerComponent } from './admin/adm-tarainer/adm-tarainer.componen
     AdmStuAccessComponent,
     AdmTraAccessComponent,
     AdmStudentComponent,
-    AdmTarainerComponent
+    AdmTarainerComponent,
+    UpdateStuComponent,
+    UpdateTraComponent
   ],
   imports: [
     BrowserModule,
