@@ -124,6 +124,18 @@
              <!-- validation -->
              <small class="text-danger" [class.d-none]="trainerexp.valid || trainerexp.untouched">Enter valid experience</small>
           </div>
+          <!-- couses -->
+          <div class="mb-3">
+            <label for="courses">Course undertaking</label>
+            <select class="form-control" name="courses" id="courses" #courses="ngModel" [(ngModel)]="Trainer.courses"   required>
+              <option value="" disabled>Choose Course</option>
+              <option value="Full Stack Development">Fullstack Development</option>
+              <option value="Data Science and analytics">Data Science and analytics</option>
+              <option value="Cyber Security Analyst">Cyber Security</option>
+              </select>
+              <!-- course validation -->
+              <small class="text-danger" [class.d-none]="courses.valid || courses.untouched">Please choose a course</small>
+          </div>
           <!-- password -->
         <div class="mb-3">
           <label  class="form-label">Password</label>

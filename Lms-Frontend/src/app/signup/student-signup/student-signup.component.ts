@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
+// import { StudentModel } from 'src/app/admin/adm-stu-access/studentaccess.model';
 
 @Component({
   selector: 'app-student-signup',
@@ -8,24 +9,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./student-signup.component.css']
 })
 export class StudentSignupComponent implements OnInit {
-
+  // Student =new StudentModel('','','','','','','',false)
   constructor(private authService:AuthService,private router:Router) { }
 
   ngOnInit(): void {
   }
+  
   Student={
     name:'',
     address:'',
     email:'',
     ph:'',
     edu:'',
+    courses:'',
     pwd:'',
     repwd:'',
     isApproved:false
   }
+  // courseChange(event:any){
+  //   this.Student.courses = event.target.value;
+  // }
   studentSignup(){
   this.authService.studentSignup(this.Student);
   alert('Congratulations, Your Account Has Been Successfully Created.');
-  this.router.navigate(['/stulogin']);
+  this.router.navigate(['stulogin']); 
+
+ 
+
   }
 }

@@ -15,7 +15,8 @@
                         <th>Qualification</th>
                         <th>Skills</th>
                         <th>Experience in teaching</th>
-                        <th></th>
+                        <th>Course</th>
+                        <th>Date of entrollment</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -29,12 +30,13 @@
                                  <td>{{trainer.traineredu}}</td>
                                  <td>{{trainer.trainerskill}}</td>
                                  <td>{{trainer.trainerexp}}</td>
+                                 <td>{{trainer.tracours}}</td>
                                  <td>
                                     <td>
-                                        <button class="btn btn-warning"  (click)="editTrainer(trainer)">✎Edit</button>
+                                        <button class="btn btn-warning"  (click)="editTrainer(trainer)">Edit</button>
                                     </td> 
                                     <td>
-                                        <button class="btn btn-danger" (click)="deleteTrainer(trainer)">🗑Delete</button>
+                                        <button class="btn btn-danger" (click)="deleteTrainer(trainer)">Delete</button>
                                     </td>         
                     </tr>
                 </tbody>

@@ -48,6 +48,7 @@ app.post('/studentsignup',(req,res)=>{
         studentemail:studentData.email,
         studentph:studentData.ph,
         studentedu:studentData.edu,
+        stucours:studentData.courses,
         studentpwd:studentData.pwd,
         isApproved:false
     }
@@ -110,6 +111,7 @@ app.post('/trainersignup',(req,res)=>{
         trainerpwd:trainerData.pwd,
          trainerskill:trainerData.skill,
          trainerexp:trainerData.exp,
+         tracours:trainerData.courses,
         isApproved:false
        
     }
@@ -238,8 +240,8 @@ app.put('/updatestuprf',verifyToken,(req,res)=>{
     studentaddress=req.body.studentaddress,
     studentemail=req.body.studentemail,
     studentph=req.body. studentph,
-    studentedu=req.body.studentedu
-    
+    studentedu=req.body.studentedu,
+    stucours=req.body.stucours
     StudentData.findByIdAndUpdate({"_id":id},
     // find with the id and update with the set ie new productid mans that comming from the frontend
               {
@@ -248,7 +250,8 @@ app.put('/updatestuprf',verifyToken,(req,res)=>{
                     studentaddress:studentaddress,
                     studentemail:studentemail,
                     studentph:studentph,
-                    studentedu:studentedu
+                    studentedu:studentedu,
+                    stucours:stucours
                   }
               }
     )
@@ -315,7 +318,8 @@ app.put('/updatetraprf',verifyToken,(req,res)=>{
     trainerph=req.body. trainerph,
     traineredu=req.body.traineredu,
     trainerskill=req.body.trainerskill,
-    trainerexp=req.body.trainerexp
+    trainerexp=req.body.trainerexp,
+    tracours=req.body.tracours
     TrainerData.findByIdAndUpdate({"_id":id},
     // find with the id and update with the set ie new productid mans that comming from the frontend
               {
@@ -325,7 +329,8 @@ app.put('/updatetraprf',verifyToken,(req,res)=>{
                     trainerph:trainerph,
                     traineredu:traineredu,
                     trainerskill:trainerskill,
-                    trainerexp:trainerexp
+                    trainerexp:trainerexp,
+                    tracours: tracours
                   }
               }
     )

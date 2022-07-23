@@ -1,5 +1,5 @@
 <div class="all">
-    <form class="form col-sm-6" #stuSignup="ngForm" (ngSubmit)="studentSignup()">
+    <form class="form col-sm-6" #stuSignup="ngForm"  (ngSubmit)="studentSignup()">
       <h1 class="title">SIGN UP</h1>
         <div class="mb-3">
           <!-- name -->
@@ -24,7 +24,7 @@
              class="form-control" 
              id="address"
              name="studentaddress"
-             [(ngModel)]="Student.address"
+             [(ngModel)]="Student. address"
              #studentaddress="ngModel"
              placeholder="Ender adress"
              [class.is-invalid]="studentaddress.invalid && studentaddress.touched"
@@ -93,6 +93,18 @@
              required>
              <!-- qualification validation -->
              <small class="text-danger" [class.d-none]="studentedu.valid || studentedu.untouched">Enter valid qualification</small>
+          </div>
+          <!-- couses -->
+          <div class="mb-3">
+            <label for="courses">Courses</label>
+            <select class="form-control" name="courses" id="courses" #courses="ngModel" [(ngModel)]="Student.courses"   required>
+              <option value="" disabled>Choose Course</option>
+              <option value="Full Stack Development">Fullstack Development</option>
+              <option value="Data Science and analytics">Data Science and analytics</option>
+              <option value="Cyber Security Analyst">Cyber Security</option>
+              </select>
+              <!-- course validation -->
+              <small class="text-danger" [class.d-none]="courses.valid || courses.untouched">Please choose a course</small>
           </div>
          <!-- password -->
         <div class="mb-3">

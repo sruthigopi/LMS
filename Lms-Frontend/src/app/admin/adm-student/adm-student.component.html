@@ -12,7 +12,8 @@
                         <th>Email</th>
                         <th>Contact Number</th>
                         <th>Qualification</th>
-                        <th></th>
+                        <th>Course</th>
+                        <th>Date of entrollment</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -24,12 +25,13 @@
                                  <td>{{student.studentemail}}</td>
                                  <td>{{student.studentph}}</td>
                                  <td>{{student.studentedu}}</td>
+                                 <td>{{student.stucours}}</td>
                                  <td>
                                     <td>
-                                        <button class="btn btn-warning" (click)="editStudent(student)">✎Edit</button>
+                                        <button class="btn btn-warning" (click)="editStudent(student)">Edit</button>
                                     </td> 
                                     <td>
-                                       <button class="btn btn-danger" (click)="deleteStudent(student)">🗑Delete</button>
+                                       <button class="btn btn-danger" (click)="deleteStudent(student)">Delete</button>
                                    </td>        
                     </tr>
                 </tbody>

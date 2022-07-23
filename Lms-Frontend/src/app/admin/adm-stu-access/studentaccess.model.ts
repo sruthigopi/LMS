@@ -6,6 +6,7 @@ export class StudentModel{
      public studentph:String,
      public studentedu:String,
      public studentpwd:String,
+     public stucours:String,
      public isApproved:boolean
     ){}
 }
