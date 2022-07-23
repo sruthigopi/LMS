@@ -108,8 +108,8 @@ app.post('/trainersignup',(req,res)=>{
         trainerph:trainerData.ph,
         traineredu:trainerData.edu,
         trainerpwd:trainerData.pwd,
-        // trainerskill:trainerData.skill,
-        // trainerexp:trainerData.exp,
+         trainerskill:trainerData.skill,
+         trainerexp:trainerData.exp,
         isApproved:false
        
     }
@@ -313,8 +313,9 @@ app.put('/updatetraprf',verifyToken,(req,res)=>{
     trainername=req.body.trainername,
     traineraddress=req.body.traineraddress,
     trainerph=req.body. trainerph,
-    traineredu=req.body.traineredu
-    
+    traineredu=req.body.traineredu,
+    trainerskill=req.body.trainerskill,
+    trainerexp=req.body.trainerexp
     TrainerData.findByIdAndUpdate({"_id":id},
     // find with the id and update with the set ie new productid mans that comming from the frontend
               {
@@ -322,7 +323,9 @@ app.put('/updatetraprf',verifyToken,(req,res)=>{
                     trainername: trainername,
                     traineraddress:traineraddress,
                     trainerph:trainerph,
-                    traineredu:traineredu
+                    traineredu:traineredu,
+                    trainerskill:trainerskill,
+                    trainerexp:trainerexp
                   }
               }
     )

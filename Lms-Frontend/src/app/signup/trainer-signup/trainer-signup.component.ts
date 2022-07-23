@@ -18,8 +18,8 @@ export class TrainerSignupComponent implements OnInit {
     edu:'',
     pwd:'',
     repwd:'',
-    // skill:'',
-    // exp:'',
+    skill:'',
+    exp:'',
     isApproved:false
   }
   ngOnInit(): void {

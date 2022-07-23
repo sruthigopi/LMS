@@ -28,7 +28,7 @@ this.authService.studentLogin(this.Student)
 
     console.log('sucessfully loggedin');
     localStorage.setItem('token',res.token);
-    this.router.navigate(['student/stuexams']);
+    this.router.navigate(['student']);
  
 },
 (error:HttpErrorResponse)=>{

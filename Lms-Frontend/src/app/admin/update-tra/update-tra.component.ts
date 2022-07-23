@@ -12,7 +12,7 @@ export class UpdateTraComponent implements OnInit {
 
   constructor(private authService:AuthService,private router:Router) { }
 
-  trainerItem = new TrainerModel('','','','','','',true);
+  trainerItem = new TrainerModel('','','','','','','','',true);
 
   ngOnInit(): void {
     let trainerId=localStorage.getItem("editTrainerId");

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./adm-stu-access.component.css']
 })
 export class AdmStuAccessComponent implements OnInit {
-  title:string='Entrol Students';
+  title:string='Enroll Students';
   students:StudentModel |any;
   nodata=false;
 

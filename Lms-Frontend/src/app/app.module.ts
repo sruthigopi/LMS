@@ -31,7 +31,6 @@ import { UpdateTraComponent } from './admin/update-tra/update-tra.component';
 @NgModule({
   declarations: [
     AppComponent,
-
     ExamComponent,
     FeedbackComponent,
     LearningMaterialsComponent,

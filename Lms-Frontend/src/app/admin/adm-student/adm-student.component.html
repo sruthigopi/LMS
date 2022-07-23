@@ -1,6 +1,6 @@
 <app-adm-nav></app-adm-nav>
 <!-- admin student details in admin -->
-<h1 style="text-align:center;">Entrolled Students List</h1>
+<h1 style="text-align:center;">Enrolled Student List</h1>
 
 <div style="margin-top: 50px;" class="col-lg-12 container">
         <div class="table-responsive table-bordered">
@@ -26,10 +26,10 @@
                                  <td>{{student.studentedu}}</td>
                                  <td>
                                     <td>
-                                        <button class="btn btn-primary" (click)="editStudent(student)">Edit</button>
+                                        <button class="btn btn-warning" (click)="editStudent(student)">✎Edit</button>
                                     </td> 
                                     <td>
-                                       <button class="btn btn-danger" (click)="deleteStudent(student)">Delete</button>
+                                       <button class="btn btn-danger" (click)="deleteStudent(student)">🗑Delete</button>
                                    </td>        
                     </tr>
                 </tbody>

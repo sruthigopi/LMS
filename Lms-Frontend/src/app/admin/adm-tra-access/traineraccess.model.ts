@@ -5,8 +5,8 @@ export class TrainerModel{
        public traineremail:String,
        public trainerph:String,
        public traineredu:String,
-    //    public trainerskill:String,
-    //    public trainerexp:Number,
+       public trainerskill:String,
+        public trainerexp:String,
        public trainerpwd:String,
        public isApproved:boolean
     ){}

@@ -10,7 +10,7 @@ import { TrainerModel } from './traineraccess.model';
 export class AdmTraAccessComponent implements OnInit {
 
   
-  title:string='Entrol Trainers';
+  title:string='Enroll Trainers';
   trainers:TrainerModel |any;
   nodata=false;
 
