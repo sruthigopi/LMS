@@ -12,6 +12,7 @@ var StudentSchema= new Schema({
     studentedu:String,
     studentpwd:String,
     stucours:String,
+     studate:String,
     isApproved:Boolean
 })
 var StudentData = mongoose.model('Student',StudentSchema);

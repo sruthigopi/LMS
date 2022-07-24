@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./adm-student.component.css']
 })
 export class AdmStudentComponent implements OnInit {
+  
   students:StudentModel |any;
   nodata=false;
 

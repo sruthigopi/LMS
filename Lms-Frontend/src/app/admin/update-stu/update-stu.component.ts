@@ -12,7 +12,7 @@ export class UpdateStuComponent implements OnInit {
 
   constructor(private authService:AuthService,private router:Router) { }
 
-  studentItem = new StudentModel('','','','','','','',true);
+  studentItem = new StudentModel('','','','','','','','',true);
 
   ngOnInit(): void {
     console.log('initialisation');

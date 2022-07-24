@@ -50,6 +50,7 @@ app.post('/studentsignup',(req,res)=>{
         studentedu:studentData.edu,
         stucours:studentData.courses,
         studentpwd:studentData.pwd,
+        //  studate:studate,
         isApproved:false
     }
     console.log(student)
@@ -57,6 +58,7 @@ app.post('/studentsignup',(req,res)=>{
     students.save()
     });
 
+    
 // login student
 app.post('/studentlogin',(req,res)=>{
   
@@ -173,9 +175,11 @@ app.get('/trainerdetails',verifyToken,function(req,res){
 app.put('/approve',verifyToken,function(req,res){
     console.log(req.body);
     id=req.body._id
-
+    studate=req.body.studate;
+    console.log(studate);
     StudentData.findByIdAndUpdate({"_id":id},{$set:{
-        "isApproved":"true"
+        "isApproved":"true",
+          "studate":studate
     }})
     .then(()=>{
         console.log('students approval successful');
@@ -271,8 +275,10 @@ app.put('/approvetrainer',verifyToken,function(req,res){
    
     id=req.body._id
     console.log(req.body);
+    tradate=req.body.tradate;
     TrainerData.findByIdAndUpdate({"_id":id},{$set:{
-        "isApproved":"true"
+        "isApproved":"true",
+        "tradate":tradate
     }})
     .then(()=>{
         console.log('trainer approval success');

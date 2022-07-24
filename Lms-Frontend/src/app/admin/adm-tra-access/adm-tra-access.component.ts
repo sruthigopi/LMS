@@ -9,11 +9,10 @@ import { TrainerModel } from './traineraccess.model';
 })
 export class AdmTraAccessComponent implements OnInit {
 
-  
   title:string='Enroll Trainers';
   trainers:TrainerModel |any;
   nodata=false;
-
+  date:string=new Date().toLocaleString();
   constructor(private accessService:AccessService) { }
 
   ngOnInit(): void {
@@ -32,6 +31,7 @@ export class AdmTraAccessComponent implements OnInit {
   }
 // approve trainers
 approveTrainer(trainer:any){
+  trainer.tradate=this.date
   this.accessService.approveTrainer(trainer).subscribe((data)=>{
     this.ngOnInit();
  })

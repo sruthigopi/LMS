@@ -12,7 +12,7 @@ export class AdmStuAccessComponent implements OnInit {
   title:string='Enroll Students';
   students:StudentModel |any;
   nodata=false;
-
+      date:string=new Date().toLocaleString();
   constructor(private accessService:AccessService,private router:Router) { }
 
   ngOnInit(): void {
@@ -25,13 +25,14 @@ export class AdmStuAccessComponent implements OnInit {
      } else {
       this.nodata=false
     }
-    })
+    });
   }
   // approve student
   approveStudent(student: any){
+    student.studate=this.date
     this.accessService.approveStudent(student).subscribe((data)=>{
        this.ngOnInit();
-    })
+    });
 
   }
   // decline student

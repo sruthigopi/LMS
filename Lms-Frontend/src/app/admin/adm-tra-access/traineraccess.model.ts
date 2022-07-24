@@ -9,6 +9,7 @@ export class TrainerModel{
         public trainerexp:String,
        public tracours:String,
        public trainerpwd:String,
+       public tradate:String,
        public isApproved:boolean
     ){}
 }
