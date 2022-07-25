@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
-
+  image:string='../../../assets/images/ba4.jpg';
   Admin={
     admineusername:'',
     adminepwd:''

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./student-signup.component.css']
 })
 export class StudentSignupComponent implements OnInit {
-  // Student =new StudentModel('','','','','','','',false)
+  image1:string='../../../assets/images/ba2.png';
   constructor(private authService:AuthService,private router:Router) { }
 
   ngOnInit(): void {
@@ -26,9 +26,7 @@ export class StudentSignupComponent implements OnInit {
     repwd:'',
     isApproved:false
   }
-  // courseChange(event:any){
-  //   this.Student.courses = event.target.value;
-  // }
+  
   studentSignup(){
   this.authService.studentSignup(this.Student);
   alert('Congratulations, Your Account Has Been Successfully Created.');

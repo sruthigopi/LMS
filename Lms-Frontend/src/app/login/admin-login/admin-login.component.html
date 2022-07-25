@@ -1,3 +1,5 @@
+<div class="back">
+  <img class="img-fluid" [src]="image"  >
 <div class="login">
     <form  #adLogin="ngForm" (ngSubmit)="adminLogin()">
       <h1 class="title mb-3 fw-normal">LOGIN</h1>
@@ -44,7 +46,8 @@
                 </div></small>
       </div>
       <div class="d-grid gap-2">
-        <button type="submit" class="btn  btn-success" [disabled]="adLogin.form.invalid">LOGIN</button>
+        <button type="submit" class="btn  btn-primary" [disabled]="adLogin.form.invalid">LOGIN</button>
       </div>
       </form>
     </div>
+</div>

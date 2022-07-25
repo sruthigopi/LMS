@@ -1,7 +1,14 @@
+<div class="back">
+  <img class="img-fluid" [src]="image1"  >
+  <div class="top">
+  <h1>LMS</h1>
+  <h3>Your gateway to success</h3>
+</div>
 <div class="all">
     <form class="form col-sm-6" #stuSignup="ngForm"  (ngSubmit)="studentSignup()">
-      <h1 class="title">SIGN UP</h1>
-        <div class="mb-3">
+      <h1 class="title">Create An Account</h1>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
           <!-- name -->
           <label for="exampleInputEmail1" class="form-label">Name</label>
           <input type="text" 
@@ -17,7 +24,31 @@
          <!-- name validation -->
          <small class="text-danger" [class.d-none]="studentname.valid || studentname.untouched">Ender valid name</small>
         </div>
-        <div class="mb-3">
+        <div class="col-md-6 col-sm-12">
+          <!-- email id -->
+          <label for="exampleInputEmail1" class="form-label">Email Id</label>
+          <input type="email"
+           class="form-control" 
+           id="email" 
+           name="studentemail"
+           [(ngModel)]="Student.email"
+           #studentemail="ngModel"
+           placeholder="Ender email id"
+           [class.is-invalid]="studentemail.invalid && studentemail.touched"
+       pattern="^[a-zA-z0-9\.%_-]+@[a-zA-Z0-9%_]+\.[a-z]{2,4}(.[a-z]{2,3})?"
+       required>
+       <!-- email validation -->
+       <small class="text-danger" *ngIf="studentemail.touched && !studentemail.valid">
+        <div *ngIf="studentemail.errors?.['required']">
+          Email Is Required
+            </div>
+        <div *ngIf="studentemail.errors?.['pattern']">
+             Enter valid email address
+            </div></small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-sm-12">
           <!-- address -->
             <label for="exampleInputEmail1" class="form-label">Adress</label>
             <input type="text"
@@ -34,30 +65,9 @@
              <small class="text-danger" [class.d-none]="studentaddress.valid || studentaddress.untouched">Ender valid address</small>
           </div>
           
-          <div class="mb-3">
-            <!-- email id -->
-            <label for="exampleInputEmail1" class="form-label">Email Id</label>
-            <input type="email"
-             class="form-control" 
-             id="email" 
-             name="studentemail"
-             [(ngModel)]="Student.email"
-             #studentemail="ngModel"
-             placeholder="Ender email id"
-             [class.is-invalid]="studentemail.invalid && studentemail.touched"
-         pattern="^[a-zA-z0-9\.%_-]+@[a-zA-Z0-9%_]+\.[a-z]{2,4}(.[a-z]{2,3})?"
-         required>
-         <!-- email validation -->
-         <small class="text-danger" *ngIf="studentemail.touched && !studentemail.valid">
-          <div *ngIf="studentemail.errors?.['required']">
-            Email Is Required
-              </div>
-          <div *ngIf="studentemail.errors?.['pattern']">
-               Enter valid email address
-              </div></small>
-          </div>
+         
           <!-- phone number -->
-          <div class="mb-3">
+          <div class="col-md-4 col-sm-12">
             <label for="exampleInputEmail1" class="form-label">Phone No</label>
             <input type="text" 
             class="form-control" 
@@ -72,15 +82,17 @@
              <!-- phone number validation -->
              <small class="text-danger" *ngIf="studentph.touched && !studentph.valid">
               <div *ngIf="studentph.errors?.['required']">
-                Phone number is required
+                MobileNo Is Required
                   </div>
               <div *ngIf="studentph.errors?.['pattern']">
-                   Enter valid phone number
+                   Enter Valid MobileNo
                   </div></small>
           </div>
-          <div class="mb-3">
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
             <!-- qualification -->
-            <label for="exampleInputEmail1" class="form-label">Highest Educational Qualification</label>
+            <label for="exampleInputEmail1" class="form-label">Highest Qualification</label>
             <input type="text" 
             class="form-control"
              id="education" 
@@ -95,7 +107,7 @@
              <small class="text-danger" [class.d-none]="studentedu.valid || studentedu.untouched">Enter valid qualification</small>
           </div>
           <!-- couses -->
-          <div class="mb-3">
+          <div class="col-md-6 col-sm-12">
             <label for="courses">Courses</label>
             <select class="form-control" name="courses" id="courses" #courses="ngModel" [(ngModel)]="Student.courses"   required>
               <option value="" disabled>Choose Course</option>
@@ -106,6 +118,7 @@
               <!-- course validation -->
               <small class="text-danger" [class.d-none]="courses.valid || courses.untouched">Please choose a course</small>
           </div>
+        </div>
          <!-- password -->
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -146,9 +159,10 @@
                   </div> -->
         
         <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-success" [disabled]="stuSignup.form.invalid">Sign Up</button>
+        <button type="submit" class="btn btn-primary" [disabled]="stuSignup.form.invalid">Join Now</button>
       </div>
       <br>
       <a routerLink="/stulogin">Already have an account?</a>
       </form>
     </div>
+  </div>

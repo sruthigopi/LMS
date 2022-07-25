@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./student-login.component.css']
 })
 export class StudentLoginComponent implements OnInit {
-
+  image:string='../../../assets/images/ba5.jpg';
   constructor(private authService:AuthService,private router:Router) { }
 
   ngOnInit(): void {

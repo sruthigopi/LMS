@@ -17,7 +17,7 @@ export class TrainerLoginComponent implements OnInit {
   
   }
   constructor(private authService:AuthService,private router:Router) { }
-
+  image:string='../../../assets/images/ba3.jpg';
   ngOnInit(): void {
   }
   trainerLogin(){
