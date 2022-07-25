@@ -15,6 +15,6 @@ export class AdmNavComponent implements OnInit {
   }
   logoutAdmin(){
     localStorage.removeItem('token1');
-    this.router.navigate(['admin']);
+    this.router.navigate(['adlogin']);
   }
 }

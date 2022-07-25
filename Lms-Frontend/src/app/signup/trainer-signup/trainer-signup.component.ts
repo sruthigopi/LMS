@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./trainer-signup.component.css']
 })
 export class TrainerSignupComponent implements OnInit {
-
+  image:string='../../../assets/images/ba1.png';
   constructor(private authService:AuthService,private router:Router) { }
   Trainer={
     name:'',
@@ -20,10 +20,12 @@ export class TrainerSignupComponent implements OnInit {
     repwd:'',
     skill:'',
     exp:'',
+    courses:'',
     isApproved:false
   }
   ngOnInit(): void {
   }
+ 
   trainerSignup(){
     this.authService.trainerSignup(this.Trainer);
     alert('Congratulations, Your Account Has Been Successfully Created.');

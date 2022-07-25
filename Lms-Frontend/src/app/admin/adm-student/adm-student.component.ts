@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./adm-student.component.css']
 })
 export class AdmStudentComponent implements OnInit {
+  
   students:StudentModel |any;
   nodata=false;
 
@@ -36,5 +37,9 @@ export class AdmStudentComponent implements OnInit {
       this.ngOnInit();
      });
   }
-
+// edit student
+editStudent(student:any){
+  localStorage.setItem("editStudentId",student._id.toString())
+  this.router.navigate(['stuudt']);
+}
 }

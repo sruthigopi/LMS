@@ -9,17 +9,17 @@ import { TrainerModel } from './traineraccess.model';
 })
 export class AdmTraAccessComponent implements OnInit {
 
-  
-  title:string='Entrol Trainers';
+  title:string='Enroll Trainers';
   trainers:TrainerModel |any;
   nodata=false;
-
+  date:string=new Date().toLocaleString();
   constructor(private accessService:AccessService) { }
 
   ngOnInit(): void {
+    console.log('deatails');
     this.accessService.getTrainerdetails().subscribe((data)=>{
       this.trainers=JSON.parse(JSON.stringify(data));
-      // find any student is present to approve
+      // find any trainer is present to approve
      
       if (this.trainers.length === 0) {
         this.nodata=true;
@@ -31,6 +31,7 @@ export class AdmTraAccessComponent implements OnInit {
   }
 // approve trainers
 approveTrainer(trainer:any){
+  trainer.tradate=this.date
   this.accessService.approveTrainer(trainer).subscribe((data)=>{
     this.ngOnInit();
  })

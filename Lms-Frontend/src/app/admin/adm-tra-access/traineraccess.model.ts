@@ -6,8 +6,10 @@ export class TrainerModel{
        public trainerph:String,
        public traineredu:String,
        public trainerskill:String,
-       public trainerexp:String,
+        public trainerexp:String,
+       public tracours:String,
        public trainerpwd:String,
+       public tradate:String,
        public isApproved:boolean
     ){}
 }

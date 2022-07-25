@@ -55,5 +55,24 @@ trainerSignup(Trainer:any){
 trainerLogin(Trainer:any){
   return this.http.post<any>('http://localhost:3000/trainerlogin',Trainer)
 }
-
+// get student profile for edit 
+getStudentUpdate(id:any){
+  return this.http.get("http://localhost:3000/"+id);
+}
+// edit student
+editStudent(student:any){
+  console.log('client is updated');
+  return this.http.put('http://localhost:3000/updatestuprf',student)
+  .subscribe((data)=>{console.log(data)})
+}
+// get trainer details for edit
+getTrainerUpdate(id:any){
+  return this.http.get("http://localhost:3000/edittra/"+id);
+}
+// 
+editTrainer(trainer:any){
+  console.log('client is updated');
+  return this.http.put('http://localhost:3000/updatetraprf',trainer)
+  .subscribe((data)=>{console.log(data)})
+}
 }

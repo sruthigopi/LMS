@@ -1,7 +1,7 @@
 <app-adm-nav></app-adm-nav>
 <!-- trainer data in admin  -->
 
-<h1 style="text-align:center;">Entrolled Trainer List</h1>
+<h1 style="text-align:center;">Enrolled Trainer List</h1>
 
 <div style="margin-top: 50px;" class="col-lg-12 container">
         <div class="table-responsive table-bordered">
@@ -13,6 +13,10 @@
                         <th>Email</th>
                         <th>Contact Number</th>
                         <th>Qualification</th>
+                        <th>Skills</th>
+                        <th>Experience in teaching</th>
+                        <th>Course</th>
+                        <th>Date of enrollment</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -25,9 +29,13 @@
                                  <td>{{trainer.traineremail}}</td>
                                  <td>{{trainer.trainerph}}</td>
                                  <td>{{trainer.traineredu}}</td>
+                                 <td>{{trainer.trainerskill}}</td>
+                                 <td>{{trainer.trainerexp}}</td>
+                                 <td>{{trainer.tracours}}</td>
+                                 <td>{{trainer.tradate}}</td>
                                  <td>
                                     <td>
-                                        <button class="btn btn-primary">Edit</button>
+                                        <button class="btn btn-warning"  (click)="editTrainer(trainer)">Edit</button>
                                     </td> 
                                     <td>
                                         <button class="btn btn-danger" (click)="deleteTrainer(trainer)">Delete</button>

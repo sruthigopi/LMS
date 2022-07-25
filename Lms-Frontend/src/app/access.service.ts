@@ -12,6 +12,11 @@ export class AccessService {
 getstudetails(){
   return this.http.get('http://localhost:3000/studentdetails');
 }
+// get trainer details to admin for access allocation
+getTrainerdetails(){
+  console.log('get trainer details service file ok')
+  return this.http.get('http://localhost:3000/trainerdetails');
+}
 
 // approve student
 approveStudent(student:any){
@@ -31,10 +36,7 @@ return this.http.delete('http://localhost:3000/declinestu/'+id);
 deleteStudent(id:any){
   return this.http.delete('http://localhost:3000/deletestu/'+id);
 }
-// get trainer details to admin for access allocation
-getTrainerdetails(){
-  return this.http.get('http://localhost:3000/trainerdetails');
-}
+
 // approve trainer
 approveTrainer(trainer:any){
   return this.http.put('http://localhost:3000/approvetrainer',trainer);
@@ -51,4 +53,5 @@ declineTrainer(id:any){
 deleteTrainer(id:any){
   return this.http.delete('http://localhost:3000/deletetra/'+id);
 }
+
 }

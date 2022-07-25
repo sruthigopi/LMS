@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./student-login.component.css']
 })
 export class StudentLoginComponent implements OnInit {
-
+  image:string='../../../assets/images/ba5.jpg';
   constructor(private authService:AuthService,private router:Router) { }
 
   ngOnInit(): void {
@@ -28,11 +28,11 @@ this.authService.studentLogin(this.Student)
 
     console.log('sucessfully loggedin');
     localStorage.setItem('token',res.token);
-    this.router.navigate(['/courses']);
+    this.router.navigate(['student']);
  
 },
 (error:HttpErrorResponse)=>{
-alert('Incorrect Email Adderess Or Password');
+alert('Admin must entrol your profile for logging');
 
 },
 )

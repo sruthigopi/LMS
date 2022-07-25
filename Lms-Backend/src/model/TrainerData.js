@@ -12,7 +12,9 @@ var TrainerSchema= new Schema({
     traineredu:String,
     trainerpwd:String,
     trainerskill:String,
-    trainerexp:String,
+     trainerexp:String,
+     tracours:String,
+     tradate:String,
     isApproved:Boolean
 })
 var TrainerData = mongoose.model('Trainer',TrainerSchema);

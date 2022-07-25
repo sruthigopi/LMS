@@ -1,6 +1,9 @@
+<div class="back">
+  <img class="img-fluid" [src]="image"  ></div>
+
 <div class="login">
     <form  #traLogin="ngForm" (ngSubmit)="trainerLogin()">
-      <h1 class="title mb-3 fw-normal">Login As Trainer</h1>
+      <h1 class="title mb-3 fw-normal">Welcome</h1>
       <div class="mb-3 form-group">
         <input type="email" 
         class="form-control"
@@ -44,7 +47,7 @@
       </div>
      
       <div class="d-grid">
-        <button type="submit" class="btn  btn-success" [disabled]="traLogin.form.invalid">LOGIN</button>
+        <button type="submit" class="btn  btn-primary" [disabled]="traLogin.form.invalid">LOGIN</button>
       </div>
       <br>
               <a routerLink="/trareg">Not a member? Signup</a>

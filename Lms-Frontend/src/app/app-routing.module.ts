@@ -1,3 +1,19 @@
+import { Feedbacks2Component } from './student/courses/course2/feedbacks2/feedbacks2.component';
+import { Feedbacks1Component } from './student/courses/course1/feedbacks1/feedbacks1.component';
+import { Exams2Component } from './student/courses/course2/exams2/exams2.component';
+import { Exams1Component } from './student/courses/course1/exams1/exams1.component';
+import { Feedbacks4Component } from './student/courses/course4/feedbacks4/feedbacks4.component';
+import { Feedbacks3Component } from './student/courses/course3/feedbacks3/feedbacks3.component';
+import { Lrngmaterials4Component } from './student/courses/course4/lrngmaterials4/lrngmaterials4.component';
+import { Lrngmaterials3Component } from './student/courses/course3/lrngmaterials3/lrngmaterials3.component';
+import { Lrngmaterials2Component } from './student/courses/course2/lrngmaterials2/lrngmaterials2.component';
+import { Lrngmaterials1Component } from './student/courses/course1/lrngmaterials1/lrngmaterials1.component';
+import { Exams4Component } from './student/courses/course4/exams4/exams4.component';
+import { Exams3Component } from './student/courses/course3/exams3/exams3.component';
+import { Course4Component } from './student/courses/course4/course4.component';
+import { Course3Component } from './student/courses/course3/course3.component';
+import { Course2Component } from './student/courses/course2/course2.component';
+import { Course1Component } from './student/courses/course1/course1.component';
 import { Feedback2Component } from './student/feedback/feedback2/feedback2.component';
 import { Exam2Component } from './student/exam/exam2/exam2.component';
 import { Feedback1Component } from './student/feedback/feedback1/feedback1.component';
@@ -20,6 +36,8 @@ import { AdmTraAccessComponent } from './admin/adm-tra-access/adm-tra-access.com
 import { AdmTarainerComponent } from './admin/adm-tarainer/adm-tarainer.component';
 import { AdmStudentComponent } from './admin/adm-student/adm-student.component';
 import { AuthGuard } from './auth.guard';
+import { UpdateStuComponent } from './admin/update-stu/update-stu.component';
+import { UpdateTraComponent } from './admin/update-tra/update-tra.component';
 import { CoursesComponent } from './courses/courses.component';
 
 const routes: Routes = [
@@ -34,16 +52,35 @@ const routes: Routes = [
 {path:'traaccess',canActivate:[AuthGuard],component:AdmTraAccessComponent},
 {path:'trahome',canActivate:[AuthGuard],component:AdmTarainerComponent},
 {path:'stuhome',canActivate:[AuthGuard],component:AdmStudentComponent},
-{path:'student',component:StudentComponent},
+{path:'stuudt',component:UpdateStuComponent},
+{path:'traudt',component:UpdateTraComponent},
 {path:'student/stuexams',component:ExamComponent},
 {path:'student/stuexams/exam1',component:Exam1Component},
 {path:'student/stuexams/exam2',component:Exam2Component},
 {path:'student/stufeedbacks',component:FeedbackComponent},
 {path:'student/stufeedbacks/feedback-1',component:Feedback1Component},
 {path:'student/stufeedbacks/feedback-2',component:Feedback2Component},
-
+{path:'student',component:StudentComponent},
 {path:'student/lrngmaterials',component:LearningMaterialsComponent},
 {path:'courses',component:CoursesComponent},
+{path:'student/course1',component:Course1Component},
+{path:'student/course2',component:Course2Component},
+{path:'student/course3',component:Course3Component},
+{path:'student/course4',component:Course4Component},
+{path:'student/course1/exam1',component:Exams1Component},
+{path:'student/course2/exam2',component:Exams2Component},
+{path:'student/course3/exam3',component:Exams3Component},
+{path:'student/course4/exam4',component:Exams4Component},
+{path:'student/course1/lrngmaterials1',component:Lrngmaterials1Component},
+{path:'student/course2/lrngmaterials2',component:Lrngmaterials2Component},
+{path:'student/course3/lrngmaterials3',component:Lrngmaterials3Component},
+{path:'student/course4/lrngmaterials4',component:Lrngmaterials4Component},
+{path:'student/course1/feedbacks1',component:Feedbacks1Component},
+{path:'student/course2/feedbacks2',component:Feedbacks2Component},
+{path:'student/course3/feedbacks3',component:Feedbacks3Component},
+{path:'student/course4/feedbacks4',component:Feedbacks4Component}
+
+
 
 ];
 
