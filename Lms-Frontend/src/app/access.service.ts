@@ -23,9 +23,29 @@ approveStudent(student:any){
   return this.http.put('http://localhost:3000/approve',student);
 }
 
-// approved student list
+// approved student fsd01 list
 aprovedStuList(){
   return this.http.get('http://localhost:3000/aprovestulist');
+}
+// approved student fsd02 list
+aprovedStuListfsd02(){
+  return this.http.get('http://localhost:3000/aprovestufsd2list');
+}
+// approved student dsa01 list
+aprovedStuListdsa01(){
+  return this.http.get('http://localhost:3000/aprovestudsa1list');
+}
+// approved student dsa02 list
+aprovedStuListdsa02(){
+  return this.http.get('http://localhost:3000/aprovestudsa2list');
+}
+// approved student csa01 list
+aprovedStuListcsa01(){
+  return this.http.get('http://localhost:3000/aprovestucsa1list');
+}
+// approved student csa02 list
+aprovedStuListcsa02(){
+  return this.http.get('http://localhost:3000/aprovestucsa2list');
 }
 // decline student
 declineStudent(id:any){
@@ -44,6 +64,14 @@ approveTrainer(trainer:any){
 // aproved trainer list
 aprovedTrainer(){
   return this.http.get('http://localhost:3000/aprovetralist');
+}
+// aproved fsdtrainers
+aprovedfsdTrainer(){
+  return this.http.get('http://localhost:3000/aprovefsdtralist');
+}
+// aprove csa trainer
+aprovedcsaTrainer(){
+  return this.http.get('http://localhost:3000/aprovecsatralist');
 }
 // decline trainer
 declineTrainer(id:any){

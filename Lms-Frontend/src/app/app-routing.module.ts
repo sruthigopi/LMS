@@ -23,6 +23,13 @@ import { AuthGuard } from './auth.guard';
 import { UpdateStuComponent } from './admin/update-stu/update-stu.component';
 import { UpdateTraComponent } from './admin/update-tra/update-tra.component';
 import { CoursesComponent } from './courses/courses.component';
+import { AdminTraFsdComponent } from './admin/admin-tra-fsd/admin-tra-fsd.component';
+import { AdminTraCsaComponent } from './admin/admin-tra-csa/admin-tra-csa.component';
+import { AdminStuFsd02Component } from './admin/admin-stu-fsd02/admin-stu-fsd02.component';
+import { AdminStuDsa01Component } from './admin/admin-stu-dsa01/admin-stu-dsa01.component';
+import { AdminStuDsa02Component } from './admin/admin-stu-dsa02/admin-stu-dsa02.component';
+import { AdminStuCsa1Component } from './admin/admin-stu-csa1/admin-stu-csa1.component';
+import { AdminStuCsa2Component } from './admin/admin-stu-csa2/admin-stu-csa2.component';
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
@@ -47,7 +54,13 @@ const routes: Routes = [
 {path:'student',component:StudentComponent},
 {path:'student/lrngmaterials',component:LearningMaterialsComponent},
 {path:'courses',component:CoursesComponent},
-
+{path:'admfsd',component:AdminTraFsdComponent},
+{path:'admcsa',component:AdminTraCsaComponent},
+{path:'adstfsd2',component:AdminStuFsd02Component},
+{path:'adstdsa1',component:AdminStuDsa01Component},
+{path:'adstdsa2',component:AdminStuDsa02Component},
+{path:'adstcsa1',component:AdminStuCsa1Component},
+{path:'adstcsa2',component:AdminStuCsa2Component}
 ];
 
 

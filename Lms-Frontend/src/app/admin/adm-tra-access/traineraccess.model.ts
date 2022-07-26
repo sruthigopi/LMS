@@ -10,6 +10,7 @@ export class TrainerModel{
        public tracours:String,
        public trainerpwd:String,
        public tradate:String,
+       public tracouid:String,
        public isApproved:boolean
     ){}
 }

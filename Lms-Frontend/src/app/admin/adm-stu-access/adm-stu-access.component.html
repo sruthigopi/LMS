@@ -13,6 +13,8 @@
                         <th>Contact Number</th>
                         <th>Qualification</th>
                         <th>Couses</th>
+                        <th>Batch Id</th>
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -26,7 +28,19 @@
                                  <td>{{student.studentph}}</td>
                                  <td>{{student.studentedu}}</td>
                                  <td>{{student.stucours}}</td>
-                                 <!-- <td>{{student.studentpwd}}</td> -->
+                                 <td> 
+                                    <select class="form-control" name="tracouid" id="tracouid" #tracouid="ngModel" [(ngModel)]="studentls.stucouid"  required>
+                                      <option value="" disabled>CourseId</option>
+                                      <option value="FSD001">FSD001</option>
+                                      <option value="DSA001">DSA001</option>
+                                      <option value="CSA001">CSA001</option>
+                                      <option value="FSD002">FSD002</option>
+                                      <option value="DSA002">DSA002</option>
+                                      <option value="CSA002">CSA002</option>
+                                      </select></td>
+
+                               
+                                    <td>
                                  <td>
                                     <td>
                                         <button class="btn btn-success" (click)="approveStudent(student)">APPROVE</button>

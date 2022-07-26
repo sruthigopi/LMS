@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./adm-tarainer.component.css']
 })
 export class AdmTarainerComponent implements OnInit {
+  trainerdtls={
+    tracouid:''
+  }
   trainers:TrainerModel |any;
   nodata=false;
 

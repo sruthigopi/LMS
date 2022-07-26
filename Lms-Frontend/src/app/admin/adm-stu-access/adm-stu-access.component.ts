@@ -9,10 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./adm-stu-access.component.css']
 })
 export class AdmStuAccessComponent implements OnInit {
+  studentls={
+    stucouid:''
+  }
   title:string='Enroll Students';
   students:StudentModel |any;
   nodata=false;
-      date:string=new Date().toLocaleString();
+      date:string=new Date().toLocaleString().slice(0, 9);
   constructor(private accessService:AccessService,private router:Router) { }
 
   ngOnInit(): void {
@@ -29,7 +32,8 @@ export class AdmStuAccessComponent implements OnInit {
   }
   // approve student
   approveStudent(student: any){
-    student.studate=this.date
+    student.studate=this.date;
+    student.stucouid=this.studentls.stucouid;
     this.accessService.approveStudent(student).subscribe((data)=>{
        this.ngOnInit();
     });

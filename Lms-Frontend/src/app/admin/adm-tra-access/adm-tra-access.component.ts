@@ -8,11 +8,15 @@ import { TrainerModel } from './traineraccess.model';
   styleUrls: ['./adm-tra-access.component.css']
 })
 export class AdmTraAccessComponent implements OnInit {
-
+  trainerdtls={
+    tracouid:''
+  }
   title:string='Enroll Trainers';
   trainers:TrainerModel |any;
   nodata=false;
-  date:string=new Date().toLocaleString();
+
+  date:string=new Date().toLocaleString().slice(0, 9);
+
   constructor(private accessService:AccessService) { }
 
   ngOnInit(): void {
@@ -29,9 +33,11 @@ export class AdmTraAccessComponent implements OnInit {
     console.log(this.trainers.length)
     })
   }
+
 // approve trainers
 approveTrainer(trainer:any){
-  trainer.tradate=this.date
+  trainer.tradate=this.date;
+   trainer.tracouid=this.trainerdtls.tracouid;
   this.accessService.approveTrainer(trainer).subscribe((data)=>{
     this.ngOnInit();
  })

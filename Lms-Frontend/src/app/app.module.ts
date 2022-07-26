@@ -27,6 +27,15 @@ import { AdmStudentComponent } from './admin/adm-student/adm-student.component';
 import { AdmTarainerComponent } from './admin/adm-tarainer/adm-tarainer.component';
 import { UpdateStuComponent } from './admin/update-stu/update-stu.component';
 import { UpdateTraComponent } from './admin/update-tra/update-tra.component';
+import { AdminTraNavComponent } from './admin/admin-tra-nav/admin-tra-nav.component';
+import { AdminTraFsdComponent } from './admin/admin-tra-fsd/admin-tra-fsd.component';
+import { AdminTraCsaComponent } from './admin/admin-tra-csa/admin-tra-csa.component';
+import { AdminStuNavComponent } from './admin/admin-stu-nav/admin-stu-nav.component';
+import { AdminStuFsd02Component } from './admin/admin-stu-fsd02/admin-stu-fsd02.component';
+import { AdminStuDsa01Component } from './admin/admin-stu-dsa01/admin-stu-dsa01.component';
+import { AdminStuDsa02Component } from './admin/admin-stu-dsa02/admin-stu-dsa02.component';
+import { AdminStuCsa1Component } from './admin/admin-stu-csa1/admin-stu-csa1.component';
+import { AdminStuCsa2Component } from './admin/admin-stu-csa2/admin-stu-csa2.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +58,16 @@ import { UpdateTraComponent } from './admin/update-tra/update-tra.component';
     AdmStudentComponent,
     AdmTarainerComponent,
     UpdateStuComponent,
-    UpdateTraComponent
+    UpdateTraComponent,
+    AdminTraNavComponent,
+    AdminTraFsdComponent,
+    AdminTraCsaComponent,
+    AdminStuNavComponent,
+    AdminStuFsd02Component,
+    AdminStuDsa01Component,
+    AdminStuDsa02Component,
+    AdminStuCsa1Component,
+    AdminStuCsa2Component
   ],
   imports: [
     BrowserModule,

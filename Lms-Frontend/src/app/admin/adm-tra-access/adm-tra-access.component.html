@@ -14,6 +14,7 @@
                         <th>Skill Set</th>
                         <th>Teaching Experience</th>
                         <th>Couses</th>
+                        <th>couse id</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -29,7 +30,15 @@
                                  <td>{{trainer.trainerskill}}</td>
                                  <td>{{trainer.trainerexp}}</td>
                                  <td>{{trainer.tracours}}</td>
-                                 <td>
+                                 <td> 
+                                    <select class="form-control" name="tracouid" id="tracouid" #tracouid="ngModel" [(ngModel)]="trainerdtls.tracouid"  required>
+                                      <option value="" disabled>CourseId</option>
+                                      <option value="FSD">FSD</option>
+                                      <option value="DSA">DSA</option>
+                                      <option value="CSA">CSA</option>
+                                      </select></td>
+
+                               
                                     <td>
                                         <button class="btn btn-success" (click)="approveTrainer(trainer)" >APPROVE</button>
                                     </td> 

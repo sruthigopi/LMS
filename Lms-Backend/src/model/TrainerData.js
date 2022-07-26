@@ -15,6 +15,7 @@ var TrainerSchema= new Schema({
      trainerexp:String,
      tracours:String,
      tradate:String,
+     tracouid:String,
     isApproved:Boolean
 })
 var TrainerData = mongoose.model('Trainer',TrainerSchema);

@@ -176,31 +176,105 @@ app.put('/approve',verifyToken,function(req,res){
     console.log(req.body);
     id=req.body._id
     studate=req.body.studate;
-    console.log(studate);
+    stucouid=req.body.stucouid;
+    console.log(stucouid);
     StudentData.findByIdAndUpdate({"_id":id},{$set:{
         "isApproved":"true",
-          "studate":studate
+          "studate":studate,
+          "stucouid":stucouid
     }})
     .then(()=>{
         console.log('students approval successful');
      res.send()
     });
 })
-// print approval student list
+// print approval student FSD001 list
 app.get('/aprovestulist',function(req,res){
     res.header("Access-Control-Allow-Origin","*");
     res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
-    StudentData.find({isApproved:"true"})
+    StudentData.find({isApproved:"true",stucouid:'FSD001'})
     .then(function(students){
         console.log('aproved student list');
         res.send(students);
     });
 });
-// approved trainer list
+// print approval student FSD002 list
+app.get('/aprovestufsd2list',function(req,res){
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+    StudentData.find({isApproved:"true",stucouid:'FSD002'})
+    .then(function(students){
+        console.log('aproved student list');
+        res.send(students);
+    });
+});
+// print approval student DSA001 list
+app.get('/aprovestudsa1list',function(req,res){
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+    StudentData.find({isApproved:"true",stucouid:'DSA001'})
+    .then(function(students){
+        console.log('aproved student list');
+        res.send(students);
+    });
+});
+// print approval student DSA002 list
+app.get('/aprovestudsa2list',function(req,res){
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+    StudentData.find({isApproved:"true",stucouid:'DSA002'})
+    .then(function(students){
+        console.log('aproved student list');
+        res.send(students);
+    });
+});
+// print approval student csa001 list
+app.get('/aprovestucsa1list',function(req,res){
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+    StudentData.find({isApproved:"true",stucouid:'CSA001'})
+    .then(function(students){
+        console.log('aproved student list');
+        res.send(students);
+    });
+});
+// print approval student csa002 list
+app.get('/aprovestucsa2list',function(req,res){
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+    StudentData.find({isApproved:"true",stucouid:'CSA002'})
+    .then(function(students){
+        console.log('aproved student list');
+        res.send(students);
+    });
+});
+// print approved dsa trainer list
 app.get('/aprovetralist',verifyToken,function(req,res){
     res.header("Access-Control-Allow-Origin","*");
     res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
-    TrainerData.find({isApproved:"true"})
+   
+    TrainerData.find({isApproved:"true",tracouid:'DSA'})
+    .then(function(trainers){
+        res.send(trainers);
+    });
+});
+// print approved fsd trainer list
+app.get('/aprovefsdtralist',verifyToken,function(req,res){
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+
+    TrainerData.find({isApproved:"true",tracouid:'FSD'})
+    .then(function(trainers){
+        console.log(trainers);
+        res.send(trainers);
+    });
+});
+// print approved csa trainer list
+app.get('/aprovecsatralist',verifyToken,function(req,res){
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+
+    TrainerData.find({isApproved:"true",tracouid:'CSA'})
     .then(function(trainers){
         console.log(trainers);
         res.send(trainers);
@@ -276,12 +350,16 @@ app.put('/approvetrainer',verifyToken,function(req,res){
     id=req.body._id
     console.log(req.body);
     tradate=req.body.tradate;
+    tracouid=req.body.tracouid;
+    console.log(tracouid);
     TrainerData.findByIdAndUpdate({"_id":id},{$set:{
         "isApproved":"true",
-        "tradate":tradate
+        "tradate":tradate,
+        "tracouid":tracouid
     }})
     .then(()=>{
         console.log('trainer approval success');
+        console.log(tracouid);
      res.send()
     });
 })

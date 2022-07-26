@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AdminLoginComponent implements OnInit {
   image:string='../../../assets/images/ba4.jpg';
+  // image1:string='../../../assets/images/ba6.jpg';
   Admin={
     admineusername:'',
     adminepwd:''

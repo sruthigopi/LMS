@@ -1,7 +1,7 @@
 <app-adm-nav></app-adm-nav>
 <!-- trainer data in admin  -->
-
-<h1 style="text-align:center;">Enrolled Trainer List</h1>
+<app-admin-tra-nav></app-admin-tra-nav>
+<h1 style="text-align:center;">Enrolled DSA Trainer List</h1>
 
 <div style="margin-top: 50px;" class="col-lg-12 container">
         <div class="table-responsive table-bordered">
@@ -20,6 +20,7 @@
                         <th></th>
                         <th></th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody  style="text-align:center;">
@@ -33,6 +34,7 @@
                                  <td>{{trainer.trainerexp}}</td>
                                  <td>{{trainer.tracours}}</td>
                                  <td>{{trainer.tradate}}</td>
+                                 <td></td>
                                  <td>
                                     <td>
                                         <button class="btn btn-warning"  (click)="editTrainer(trainer)">Edit</button>
