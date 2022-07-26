@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule,HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { TokenInterceptorService } from './token-interceptor.service';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 
+
+import { AppComponent } from './app.component';
 import { ExamComponent } from './student/exam/exam.component';
 import { FeedbackComponent } from './student/feedback/feedback.component';
 import { LearningMaterialsComponent } from './student/learning-materials/learning-materials.component';
