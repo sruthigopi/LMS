@@ -36,6 +36,23 @@ import { AdminStuDsa01Component } from './admin/admin-stu-dsa01/admin-stu-dsa01.
 import { AdminStuDsa02Component } from './admin/admin-stu-dsa02/admin-stu-dsa02.component';
 import { AdminStuCsa1Component } from './admin/admin-stu-csa1/admin-stu-csa1.component';
 import { AdminStuCsa2Component } from './admin/admin-stu-csa2/admin-stu-csa2.component';
+import { Course1Component } from './student/courses/course1/course1.component';
+import { Course2Component } from './student/courses/course2/course2.component';
+import { Course3Component } from './student/courses/course3/course3.component';
+import { Course4Component } from './student/courses/course4/course4.component';
+import { Lrngmaterials1Component } from './student/courses/course1/lrngmaterials1/lrngmaterials1.component';
+import { Exams1Component } from './student/courses/course1/exams1/exams1.component';
+import { Feedbacks1Component } from './student/courses/course1/feedbacks1/feedbacks1.component';
+import { Lrngmaterials2Component } from './student/courses/course2/lrngmaterials2/lrngmaterials2.component';
+import { Exams2Component } from './student/courses/course2/exams2/exams2.component';
+import { Feedbacks2Component } from './student/courses/course2/feedbacks2/feedbacks2.component';
+import { Lrngmaterials3Component } from './student/courses/course3/lrngmaterials3/lrngmaterials3.component';
+import { Exams3Component } from './student/courses/course3/exams3/exams3.component';
+import { Feedbacks3Component } from './student/courses/course3/feedbacks3/feedbacks3.component';
+import { Lrngmaterials4Component } from './student/courses/course4/lrngmaterials4/lrngmaterials4.component';
+import { Exams4Component } from './student/courses/course4/exams4/exams4.component';
+import { Feedbacks4Component } from './student/courses/course4/feedbacks4/feedbacks4.component';
+
 
 @NgModule({
   declarations: [
@@ -61,19 +78,29 @@ import { AdminStuCsa2Component } from './admin/admin-stu-csa2/admin-stu-csa2.com
     UpdateTraComponent,
     AdminTraNavComponent,
     AdminTraFsdComponent,
-    AdminTraCsaComponent,
-    AdminStuNavComponent,
-    AdminStuFsd02Component,
     AdminStuDsa01Component,
     AdminStuDsa02Component,
     AdminStuCsa1Component,
-    AdminStuCsa2Component
+    AdminStuCsa2Component,
+    Course1Component,
+    Course2Component,
+    Course4Component,
+    Exams1Component,
+    Lrngmaterials2Component,
+    Exams2Component,
+    Feedbacks2Component,
+    Lrngmaterials3Component,
+    Exams3Component,
+    Feedbacks3Component,
+    Lrngmaterials4Component,
+    Exams4Component,
+    Feedbacks4Component,
+    AdminStuNavComponent
+
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
   ],
   providers: [AuthService,
     {
