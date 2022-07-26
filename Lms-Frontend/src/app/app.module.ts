@@ -95,12 +95,16 @@ import { Feedbacks4Component } from './student/courses/course4/feedbacks4/feedba
     Lrngmaterials4Component,
     Exams4Component,
     Feedbacks4Component,
-    AdminStuNavComponent
+    AdminStuNavComponent,
+    AdminStuFsd02Component,
+    AdminTraCsaComponent
 
   ],
   imports: [
+    BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [AuthService,
     {
