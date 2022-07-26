@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./update-stu.component.css']
 })
 export class UpdateStuComponent implements OnInit {
-
+  image:string='../../../assets/images/ba8.jpg';
   constructor(private authService:AuthService,private router:Router) { }
 
   studentItem = new StudentModel('','','','','','','','','',true);

@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { ExamComponent } from './student/exam/exam.component';
 import { FeedbackComponent } from './student/feedback/feedback.component';
 import { LearningMaterialsComponent } from './student/learning-materials/learning-materials.component';
-import { LoginComponent } from './student/login/login.component';
+// import { LoginComponent } from './student/login/login.component';
 import { SignupComponent } from './student/signup/signup.component';
 import { StudentComponent } from './student/student/student.component';
 import { HomeComponent } from './home/home.component';
@@ -52,6 +52,7 @@ import { Feedbacks3Component } from './student/courses/course3/feedbacks3/feedba
 import { Lrngmaterials4Component } from './student/courses/course4/lrngmaterials4/lrngmaterials4.component';
 import { Exams4Component } from './student/courses/course4/exams4/exams4.component';
 import { Feedbacks4Component } from './student/courses/course4/feedbacks4/feedbacks4.component';
+import { AdminMainComponent } from './admin/admin-main/admin-main.component';
 
 
 @NgModule({
@@ -60,7 +61,7 @@ import { Feedbacks4Component } from './student/courses/course4/feedbacks4/feedba
     ExamComponent,
     FeedbackComponent,
     LearningMaterialsComponent,
-    LoginComponent,
+    // LoginComponent,
     SignupComponent,
     StudentComponent,
     HomeComponent,
@@ -97,7 +98,8 @@ import { Feedbacks4Component } from './student/courses/course4/feedbacks4/feedba
     Feedbacks4Component,
     AdminStuNavComponent,
     AdminStuFsd02Component,
-    AdminTraCsaComponent
+    AdminTraCsaComponent,
+    AdminMainComponent
 
   ],
   imports: [

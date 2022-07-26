@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/auth.service';
   styleUrls: ['./update-tra.component.css']
 })
 export class UpdateTraComponent implements OnInit {
-
+  image:string='../../../assets/images/ba7.jpg';
   constructor(private authService:AuthService,private router:Router) { }
 
   trainerItem = new TrainerModel('','','','','','','','','','','',true);
