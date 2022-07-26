@@ -33,7 +33,7 @@ export class TrainerLoginComponent implements OnInit {
      
     },
     (error:HttpErrorResponse)=>{
-    alert('Admin must entrol your profile for loging');
+    alert('You are not an enrolled user');
     
     },
     )

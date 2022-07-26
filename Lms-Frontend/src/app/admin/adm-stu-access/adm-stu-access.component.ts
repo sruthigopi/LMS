@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./adm-stu-access.component.css']
 })
 export class AdmStuAccessComponent implements OnInit {
-  image:string='../../../assets/images/ba7.jpg';
+
   studentls={
     stucouid:''
   }

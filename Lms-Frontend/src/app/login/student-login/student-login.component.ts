@@ -32,7 +32,7 @@ this.authService.studentLogin(this.Student)
  
 },
 (error:HttpErrorResponse)=>{
-alert('Admin must entrol your profile for logging');
+alert('You are not an enrolled user');
 
 },
 )
