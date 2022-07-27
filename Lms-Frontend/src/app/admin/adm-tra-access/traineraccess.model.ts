@@ -11,6 +11,7 @@ export class TrainerModel{
        public trainerpwd:String,
        public tradate:String,
        public tracouid:String,
+       public tracoubtch:String,
        public isApproved:boolean
     ){}
 }

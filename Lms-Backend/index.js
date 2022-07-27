@@ -351,11 +351,13 @@ app.put('/approvetrainer',verifyToken,function(req,res){
     console.log(req.body);
     tradate=req.body.tradate;
     tracouid=req.body.tracouid;
+    tracoubtch=req.body.tracoubtch
     console.log(tracouid);
     TrainerData.findByIdAndUpdate({"_id":id},{$set:{
         "isApproved":"true",
         "tradate":tradate,
-        "tracouid":tracouid
+        "tracouid":tracouid,
+        "tracoubtch":tracoubtch
     }})
     .then(()=>{
         console.log('trainer approval success');
@@ -403,7 +405,8 @@ app.put('/updatetraprf',verifyToken,(req,res)=>{
     traineredu=req.body.traineredu,
     trainerskill=req.body.trainerskill,
     trainerexp=req.body.trainerexp,
-    tracours=req.body.tracours
+    tracours=req.body.tracours,
+    tracoubtch=req.body. tracoubtch
     TrainerData.findByIdAndUpdate({"_id":id},
     // find with the id and update with the set ie new productid mans that comming from the frontend
               {
@@ -414,7 +417,8 @@ app.put('/updatetraprf',verifyToken,(req,res)=>{
                     traineredu:traineredu,
                     trainerskill:trainerskill,
                     trainerexp:trainerexp,
-                    tracours: tracours
+                    tracours: tracours,
+                    tracoubtch:tracoubtch
                   }
               }
     )
@@ -422,7 +426,8 @@ app.put('/updatetraprf',verifyToken,(req,res)=>{
         res.send();
     })
 })
-
+// email to trainer
+// email to students
 app.listen(3000,()=>{
     console.log('server is ready');
 });

@@ -9,7 +9,8 @@ import { TrainerModel } from './traineraccess.model';
 })
 export class AdmTraAccessComponent implements OnInit {
   trainerdtls={
-    tracouid:''
+    tracouid:'',
+    tracoubtch:''
   }
   title:string='Enroll Trainers';
   trainers:TrainerModel |any;
@@ -38,6 +39,7 @@ export class AdmTraAccessComponent implements OnInit {
 approveTrainer(trainer:any){
   trainer.tradate=this.date;
    trainer.tracouid=this.trainerdtls.tracouid;
+   trainer.tracoubtch=this.trainerdtls.tracoubtch;
   this.accessService.approveTrainer(trainer).subscribe((data)=>{
     this.ngOnInit();
  })

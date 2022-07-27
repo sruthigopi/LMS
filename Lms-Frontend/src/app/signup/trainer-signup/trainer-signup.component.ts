@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class TrainerSignupComponent implements OnInit {
   image:string='../../../assets/images/ba1.png';
+  
   constructor(private authService:AuthService,private router:Router) { }
   Trainer={
     name:'',

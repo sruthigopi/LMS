@@ -81,11 +81,16 @@
                                     minlength="3"
                                     pattern="[A-Z]{3}"
                                     required>
-                                    <small class="text-danger" [class.d-none]=" tracouid.valid || tracouid.untouched">Enter valid course id</small></td>
+                                    <small class="text-danger" [class.d-none]=" tracouid.valid || tracouid.untouched">Enter valid batch id</small></td>
+                              </tr>
+                              <tr>
+                                <td><label>Batch Id</label></td>
+                                <td><input type="text" name="t_baid" #tracoubtch="ngModel" [style.width.px]=600 [(ngModel)]=" trainerItem.tracoubtch">
+                                    <!-- <small class="text-danger" [class.d-none]="tracoubtch.valid || tracoubtch.untouched">Enter valid batch id</small></td> -->
                               </tr>
                              <td></td>
                              
-                             <button class="btn btn-success btn-lg" [style.width.px]=530 type="submit" [disabled]="traEdit.form.invalid">Update</button>
+                             <button class="btn btn-success btn-lg" [style.width.px]=530 type="submit" >Update</button>
                          
                            </tbody>
                      </table>

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./student-signup.component.css']
 })
 export class StudentSignupComponent implements OnInit {
-  image1:string='../../../assets/images/ba2.png';
+  image1:string='../../../assets/images/ba1.png';
   constructor(private authService:AuthService,private router:Router) { }
 
   ngOnInit(): void {

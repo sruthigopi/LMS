@@ -14,8 +14,8 @@
                         <th>Skill Set</th>
                         <th>Teaching Experience</th>
                         <th>Couses</th>
-                        <th>couse id</th>
-                        <th></th>
+                        <th>Couse Id</th>
+                        <th>Batch Id</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -37,7 +37,14 @@
                                       <option value="DSA">DSA</option>
                                       <option value="CSA">CSA</option>
                                       </select></td>
-
+                                          
+                                      <td> 
+                                        <select class="form-control" name="tracoubtch" id="tracoubtch" #tracoubtch="ngModel" [(ngModel)]="trainerdtls.tracoubtch"  required>
+                                          <option value="" disabled>BatchId</option>
+                                          <option value="001">001</option>
+                                          <option value="002">002</option>
+                                          <option value="BOTH">BOTH</option>
+                                          </select></td>
                                
                                     <td>
                                         <button class="btn btn-success" (click)="approveTrainer(trainer)" >APPROVE</button>
