@@ -25,7 +25,7 @@ export class UpdateTraComponent implements OnInit {
   editTrainerprof(){
     this.authService.editTrainer(this.trainerItem );
     alert('trainer profile sucessfully updated');
-    this.router.navigate(["admfsd"]);
+    // this.router.navigate(["admfsd"]);
   }
   
 }

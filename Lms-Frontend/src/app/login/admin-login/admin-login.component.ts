@@ -24,7 +24,7 @@ export class AdminLoginComponent implements OnInit {
     .subscribe(
       res => {
         localStorage.setItem('token1',res.token1)
-        this.router.navigate(['/admhome']);
+        this.router.navigate(['/admfsd']);
       }
     )
   }

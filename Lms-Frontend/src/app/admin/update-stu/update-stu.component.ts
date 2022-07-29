@@ -24,6 +24,6 @@ export class UpdateStuComponent implements OnInit {
   editStudentprof(){
     this.authService.editStudent(this.studentItem );
     alert('Student profile sucessfully updated');
-    this.router.navigate(["stuhome"]);
+    // this.router.navigate(["stuhome"]);
   }
 }

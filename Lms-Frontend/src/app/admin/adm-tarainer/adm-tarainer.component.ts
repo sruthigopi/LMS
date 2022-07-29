@@ -16,17 +16,17 @@ export class AdmTarainerComponent implements OnInit {
   nodata=false;
 
   constructor(private accessService :AccessService ,private router:Router) { }
-
   ngOnInit(): void {
-    this.accessService.aprovedTrainer().subscribe((data)=>{
+     this.accessService.aprovedTrainer().subscribe((data)=>{
       this.trainers=JSON.parse(JSON.stringify(data));
-     
+     console.log(this.trainers.length)
       if (this.trainers.length === 0) {
         this.nodata=true;
      } else {
       this.nodata=false
-    } 
+    }
   })
+
   }
   deleteTrainer(trainer:any){
     this.accessService.deleteTrainer(trainer._id)
@@ -40,4 +40,5 @@ export class AdmTarainerComponent implements OnInit {
     localStorage.setItem("editTrainerId",trainer._id.toString())
     this.router.navigate(['traudt']);
   }
+
 }

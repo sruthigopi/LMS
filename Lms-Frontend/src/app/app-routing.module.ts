@@ -30,7 +30,6 @@ import { StudentLoginComponent } from './login/student-login/student-login.compo
 import { TrainerLoginComponent } from './login/trainer-login/trainer-login.component';
 import { StudentSignupComponent } from './signup/student-signup/student-signup.component';
 import { TrainerSignupComponent } from './signup/trainer-signup/trainer-signup.component';
-// import { AdmNavComponent } from './admin/adm-nav/adm-nav.component';
 import { AdmStuAccessComponent } from './admin/adm-stu-access/adm-stu-access.component';
 import { AdmTraAccessComponent } from './admin/adm-tra-access/adm-tra-access.component';
 import { AdmTarainerComponent } from './admin/adm-tarainer/adm-tarainer.component';
@@ -46,7 +45,7 @@ import { AdminStuDsa01Component } from './admin/admin-stu-dsa01/admin-stu-dsa01.
 import { AdminStuDsa02Component } from './admin/admin-stu-dsa02/admin-stu-dsa02.component';
 import { AdminStuCsa1Component } from './admin/admin-stu-csa1/admin-stu-csa1.component';
 import { AdminStuCsa2Component } from './admin/admin-stu-csa2/admin-stu-csa2.component';
-import { AdminMainComponent } from './admin/admin-main/admin-main.component';
+// import { AdminMainComponent } from './admin/admin-main/admin-main.component';
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
@@ -55,13 +54,12 @@ const routes: Routes = [
 {path:'tralogin',component:TrainerLoginComponent},
 {path:'stureg',component:StudentSignupComponent},
 {path:'trareg',component:TrainerSignupComponent},
-// {path:'admin',component:AdmNavComponent},
 {path:'stuaccess',canActivate:[AuthGuard],component:AdmStuAccessComponent},
 {path:'traaccess',canActivate:[AuthGuard],component:AdmTraAccessComponent},
 {path:'trahome',canActivate:[AuthGuard],component:AdmTarainerComponent},
 {path:'stuhome',canActivate:[AuthGuard],component:AdmStudentComponent},
-{path:'stuudt',component:UpdateStuComponent},
-{path:'traudt',component:UpdateTraComponent},
+{path:'stuudt',canActivate:[AuthGuard],component:UpdateStuComponent},
+{path:'traudt',canActivate:[AuthGuard],component:UpdateTraComponent},
 {path:'student/stuexams',component:ExamComponent},
 {path:'student/stuexams/exam1',component:Exam1Component},
 {path:'student/stuexams/exam2',component:Exam2Component},
@@ -71,13 +69,13 @@ const routes: Routes = [
 {path:'student',component:StudentComponent},
 {path:'student/lrngmaterials',component:LearningMaterialsComponent},
 {path:'courses',component:CoursesComponent},
-{path:'admfsd',component:AdminTraFsdComponent},
-{path:'admcsa',component:AdminTraCsaComponent},
-{path:'adstfsd2',component:AdminStuFsd02Component},
-{path:'adstdsa1',component:AdminStuDsa01Component},
-{path:'adstdsa2',component:AdminStuDsa02Component},
-{path:'adstcsa1',component:AdminStuCsa1Component},
-{path:'adstcsa2',component:AdminStuCsa2Component},
+{path:'admfsd',canActivate:[AuthGuard],component:AdminTraFsdComponent},
+{path:'admcsa',canActivate:[AuthGuard],component:AdminTraCsaComponent},
+{path:'adstfsd2',canActivate:[AuthGuard],component:AdminStuFsd02Component},
+{path:'adstdsa1',canActivate:[AuthGuard],component:AdminStuDsa01Component},
+{path:'adstdsa2',canActivate:[AuthGuard],component:AdminStuDsa02Component},
+{path:'adstcsa1',canActivate:[AuthGuard],component:AdminStuCsa1Component},
+{path:'adstcsa2',canActivate:[AuthGuard],component:AdminStuCsa2Component},
 {path:'student/course1',component:Course1Component},
 {path:'student/course2',component:Course2Component},
 {path:'student/course3',component:Course3Component},
@@ -94,7 +92,7 @@ const routes: Routes = [
 {path:'student/course2/feedbacks2',component:Feedbacks2Component},
 {path:'student/course3/feedbacks3',component:Feedbacks3Component},
 {path:'student/course4/feedbacks4',component:Feedbacks4Component},
-{path:'admhome',component:AdminMainComponent}
+//  {path:'admhome',component:AdminMainComponent}
 ];
 
 
