@@ -2,6 +2,7 @@ const express = require("express");
 var bodyParser = require('body-parser');
 var cors = require('cors');
 const jwt =require('jsonwebtoken');
+const nodemailer = require("nodemailer");
 
 const StudentData= require('./src/model/StudentData');
 const TrainerData=require('./src/model/TrainerData')
@@ -186,6 +187,8 @@ app.put('/approve',verifyToken,function(req,res){
     .then(()=>{
         console.log('students approval successful');
      res.send()
+    //  aprove mail for student
+      approvemail(id);
     });
 })
 // print approval student FSD001 list
@@ -361,8 +364,10 @@ app.put('/approvetrainer',verifyToken,function(req,res){
     }})
     .then(()=>{
         console.log('trainer approval success');
-        console.log(tracouid);
+        
      res.send()
+      // mail to trainer
+      approvemailtrainer(id);
     });
 })
 
@@ -427,7 +432,75 @@ app.put('/updatetraprf',verifyToken,(req,res)=>{
     })
 })
 // email to trainer
+function approvemailtrainer(id){
+    TrainerData.findOne({"_id":id})
+    .then((trainer)=>{
+        console.log(trainer);
+               var transporter = nodemailer.createTransport({
+                   service:'gmail',
+                   auth:{
+                       user:'sruthigopinath42@gmail.com',
+                       pass:'lqdvrkpnhybtcfiy'
+                   }
+               });
+               
+           var mailOptions = {
+               from: 'sruthigopinath42@gmail.com',
+               to: trainer. traineremail,
+               subject:'Account Approved',
+               html:`Hi ${trainer.trainername}, your account for ict accademy trainer is approved.
+               You can take sessions to ${trainer.tracours} course of ${trainer.tracoubtch} batches.
+               Now you can login using your registerd email Id and password.
+               check the below link <a href="http://localhost:4200/tralogin">here</a>`
+              
+           };
+           transporter.sendMail(mailOptions,function(error,info){
+               if(error){
+                   console.log(error);
+                   console.log('mail not send');
+               }
+               else{
+                   console.log(info.response)
+                   console.log('mail sent')
+               }
+           })
+           })
+}
 // email to students
+function approvemail(id){
+    StudentData.findOne({"_id":id})
+    .then((student)=>{
+ console.log(student);
+        var transporter = nodemailer.createTransport({
+            service:'gmail',
+            auth:{
+                user:'sruthigopinath42@gmail.com',
+                pass:'lqdvrkpnhybtcfiy'
+            }
+        });
+        
+    var mailOptions = {
+        from: 'sruthigopinath42@gmail.com',
+        to: student.studentemail,
+        subject:'Account Approved',
+        html:`Hi ${student.studentname}, your account for ict accademy student is approved.
+        You belong to ${student. stucours} course and ${student.stucouid} batch.\n
+        Now you can login using your registerd email Id and password \n
+        check the below link <a href="http://localhost:4200/stulogin">here</a>`
+       
+    };
+    transporter.sendMail(mailOptions,function(error,info){
+        if(error){
+            console.log(error);
+            console.log('mail not send');
+        }
+        else{
+            console.log(info.response)
+            console.log('mail sent')
+        }
+    })
+    })
+}
 app.listen(3000,()=>{
     console.log('server is ready');
 });
