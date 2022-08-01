@@ -17,7 +17,7 @@ export class TrainerLoginComponent implements OnInit {
   
   }
   constructor(private authService:AuthService,private router:Router) { }
-  image:string='../../../assets/images/ba3.jpg';
+  image:string='../../../assets/images/ba4.jpg';
   ngOnInit(): void {
   }
   trainerLogin(){
@@ -26,10 +26,17 @@ export class TrainerLoginComponent implements OnInit {
       res=>{
     
         console.log('sucessfully loggedin');
+// admin
+if(res.role=="admin"){
+  localStorage.setItem('token1',res.token1 );
+  this.router.navigate(['/admfsd']);
+ }
+// trainer
+else{
         localStorage.setItem('token3',res.token3);
           // routed to chane to trainer 
         this.router.navigate(['trainer']);
-       
+}
      
     },
     (error:HttpErrorResponse)=>{
