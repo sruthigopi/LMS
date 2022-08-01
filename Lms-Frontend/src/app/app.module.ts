@@ -53,6 +53,17 @@ import { Lrngmaterials4Component } from './student/courses/course4/lrngmaterials
 import { Exams4Component } from './student/courses/course4/exams4/exams4.component';
 import { Feedbacks4Component } from './student/courses/course4/feedbacks4/feedbacks4.component';
 import { AdminMainComponent } from './admin/admin-main/admin-main.component';
+import { TrainerhomeComponent } from './trainer/trainerhome/trainerhome.component';
+import { FsdcourseComponent } from './trainer/fsdcourse/fsdcourse.component';
+
+import { TrainerexamsComponent } from './trainer/trainerexams/trainerexams.component';
+import { TrainerfeedbackComponent } from './trainer/trainerfeedback/trainerfeedback.component';
+import { TrainerlearningmaterialsComponent } from './trainer/trainerlearningmaterials/trainerlearningmaterials.component';
+import { JsvideosComponent } from './trainer/jsvideos/jsvideos.component';
+import { AngvideoComponent } from './trainer/angvideo/angvideo.component';
+import { HtmlcssvideosComponent } from './trainer/htmlcssvideos/htmlcssvideos.component';
+import { MateriallistComponent } from './trainer/materiallist/materiallist.component';
+
 
 
 @NgModule({
@@ -99,14 +110,27 @@ import { AdminMainComponent } from './admin/admin-main/admin-main.component';
     AdminStuNavComponent,
     AdminStuFsd02Component,
     AdminTraCsaComponent,
-    AdminMainComponent
+    AdminMainComponent,
+    TrainerhomeComponent,
+    FsdcourseComponent,
+    
+    TrainerexamsComponent,
+    TrainerfeedbackComponent,
+    TrainerlearningmaterialsComponent,
+    JsvideosComponent,
+    AngvideoComponent,
+    HtmlcssvideosComponent,
+    MateriallistComponent,
+   
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+   
+  
   ],
   providers: [AuthService,
     {

@@ -1,11 +1,13 @@
 const express = require("express");
+
 var bodyParser = require('body-parser');
 var cors = require('cors');
 const jwt =require('jsonwebtoken');
 const nodemailer = require("nodemailer");
 
+const Materiallist=require('./src/model/TrainerLearning');
 const StudentData= require('./src/model/StudentData');
-const TrainerData=require('./src/model/TrainerData')
+const TrainerData=require('./src/model/TrainerData');
 
 var app = express();
 app.use(bodyParser.json());
@@ -431,6 +433,7 @@ app.put('/updatetraprf',verifyToken,(req,res)=>{
         res.send();
     })
 })
+<<<<<<< Updated upstream
 // email to trainer
 function approvemailtrainer(id){
     TrainerData.findOne({"_id":id})
@@ -501,6 +504,19 @@ function approvemail(id){
     })
     })
 }
+=======
+
+
+//trainermaterials
+app.get('materials',function(req,res){
+    res.header("Access-Control-Allow-Origin","*");
+        res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+    LMaterials.find().then(function(material){
+        res.send(material);
+    })
+})
+
+>>>>>>> Stashed changes
 app.listen(3000,()=>{
     console.log('server is ready');
 });
