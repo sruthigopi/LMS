@@ -81,24 +81,24 @@ app.post('/studentlogin',(req,res)=>{
      })
 
     //admin login
-    admineusername='admin'
+    admineusername='admin@gmail.com'
     adminepwd='admin@123'
 
-app.post('/adminlogin',(req,res)=>{
-    let adminData=req.body
-    if(!admineusername){
-        res.status(401).send('invalid username');
-    }
-    if(adminepwd!==adminData.adminepwd){
-        res.status(401).send('invalid password');
-    }
-    else{
-        let payload = {subject:admineusername+adminepwd}
-        let token1 = jwt.sign(payload,'secretkey')
-        console.log('admin logged in');
-        res.status(200).send({token1})
-    }
-    })
+// app.post('/adminlogin',(req,res)=>{
+//     let adminData=req.body
+//     if(!admineusername){
+//         res.status(401).send('invalid username');
+//     }
+//     if(adminepwd!==adminData.adminepwd){
+//         res.status(401).send('invalid password');
+//     }
+//     else{
+//         let payload = {subject:admineusername+adminepwd}
+//         let token1 = jwt.sign(payload,'secretkey')
+//         console.log('admin logged in');
+//         res.status(200).send({token1})
+//     }
+//     })
 
 // trainer signup
  
@@ -127,21 +127,30 @@ app.post('/trainersignup',(req,res)=>{
 
     app.post('/trainerlogin',(req,res)=>{
   
-        let trainerData=req.body
-       
+        let trainerData=req.body;
+
+    //    admin login
+    if(trainerData.traineremail==admineusername && trainerData.trainerpwd==adminepwd){
+        let payload = {subject:admineusername+adminepwd}
+        let token1 = jwt.sign(payload,'secretkey');
+        console.log('admin logged in')
+        res.status(200).send({ role: "admin", msg: "Admin logged In", token1})
+    }
+// trainer login
+else{
         TrainerData.findOne({"traineremail":trainerData.traineremail, "trainerpwd":trainerData.trainerpwd,isApproved:"true"},(err,trainerData)=>{
          if(trainerData){
              console.log('trainer SUCCESSFULLY LOGGEDIN');
-     
+          
          let payload = {subject:trainerData.traineremail+trainerData.trainerpwd}
          let token3 = jwt.sign(payload,'secretkey')
-         res.status(200).send({token3})
+         res.status(200).send({ role: "trainer", msg: "trainer logged In", token3})
          }
          else{
              console.log('FAILED TO LOGIN trainer');
              res.status(401).send('invalid credential');
          }
-        });
+        })};
          })
 
     // end signup and login

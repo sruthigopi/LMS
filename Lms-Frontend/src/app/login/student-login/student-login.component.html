@@ -1,5 +1,10 @@
 <div class="back">
   <img class="img-fluid" [src]="image"  >
+  <div class="top">
+    <h1>LMS</h1>
+    <h3>Your gateway to success</h3>
+  </div>
+   
 <div class="login">
     <form class="form" #stuLogin="ngForm" (ngSubmit)="studentLogin()"> 
       <h1 class="title mb-3 fw-normal" >Welcome</h1>
@@ -37,7 +42,7 @@
              #studentpwd="ngModel"
               pattern="(?=^.{6,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
               [class.is-invalid]="studentpwd.invalid && studentpwd.touched"
-             placeholder="Ender Password"
+             placeholder="Password"
              required>
              <!-- pwd validataion -->
              <small class="text-danger"   *ngIf="studentpwd.touched && !studentpwd.valid">
