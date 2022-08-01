@@ -45,9 +45,7 @@ import { AdminStuDsa01Component } from './admin/admin-stu-dsa01/admin-stu-dsa01.
 import { AdminStuDsa02Component } from './admin/admin-stu-dsa02/admin-stu-dsa02.component';
 import { AdminStuCsa1Component } from './admin/admin-stu-csa1/admin-stu-csa1.component';
 import { AdminStuCsa2Component } from './admin/admin-stu-csa2/admin-stu-csa2.component';
-<<<<<<< Updated upstream
 // import { AdminMainComponent } from './admin/admin-main/admin-main.component';
-=======
 import { AdminMainComponent } from './admin/admin-main/admin-main.component';
 import { TrainerhomeComponent } from './trainer/trainerhome/trainerhome.component';
 import { FsdcourseComponent } from './trainer/fsdcourse/fsdcourse.component';
@@ -60,7 +58,6 @@ import { JsvideosComponent } from './trainer/jsvideos/jsvideos.component';
 import { AngvideoComponent } from './trainer/angvideo/angvideo.component';
 import { MateriallistComponent } from './trainer/materiallist/materiallist.component';
 
->>>>>>> Stashed changes
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
@@ -107,9 +104,7 @@ const routes: Routes = [
 {path:'student/course2/feedbacks2',component:Feedbacks2Component},
 {path:'student/course3/feedbacks3',component:Feedbacks3Component},
 {path:'student/course4/feedbacks4',component:Feedbacks4Component},
-<<<<<<< Updated upstream
 //  {path:'admhome',component:AdminMainComponent}
-=======
 {path:'admhome',component:AdminMainComponent},
 {path:'trainer/trainerhome',component:TrainerhomeComponent},
 {path:'trainer/fsdcourse',component:FsdcourseComponent},
@@ -122,7 +117,6 @@ const routes: Routes = [
 {path:'trainer/materiallist',component:MateriallistComponent}
 
 
->>>>>>> Stashed changes
 ];
 
 
