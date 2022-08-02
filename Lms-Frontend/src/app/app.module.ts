@@ -66,6 +66,7 @@ import { MateriallistComponent } from './trainer/materiallist/materiallist.compo
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -121,6 +122,7 @@ import { MateriallistComponent } from './trainer/materiallist/materiallist.compo
     AngvideoComponent,
     HtmlcssvideosComponent,
     MateriallistComponent,
+   
    
 
   ],

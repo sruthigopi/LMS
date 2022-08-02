@@ -1,3 +1,4 @@
+
 import { Feedbacks2Component } from './student/courses/course2/feedbacks2/feedbacks2.component';
 import { Feedbacks1Component } from './student/courses/course1/feedbacks1/feedbacks1.component';
 import { Exams2Component } from './student/courses/course2/exams2/exams2.component';
@@ -14,9 +15,9 @@ import { Course4Component } from './student/courses/course4/course4.component';
 import { Course3Component } from './student/courses/course3/course3.component';
 import { Course2Component } from './student/courses/course2/course2.component';
 import { Course1Component } from './student/courses/course1/course1.component';
-import { Feedback2Component } from './student/feedback/feedback2/feedback2.component';
+
 import { Exam2Component } from './student/exam/exam2/exam2.component';
-import { Feedback1Component } from './student/feedback/feedback1/feedback1.component';
+
 import { Exam1Component } from './student/exam/exam1/exam1.component';
 import { LearningMaterialsComponent } from './student/learning-materials/learning-materials.component';
 import { FeedbackComponent } from './student/feedback/feedback.component';
@@ -76,8 +77,8 @@ const routes: Routes = [
 {path:'student/stuexams/exam1',component:Exam1Component},
 {path:'student/stuexams/exam2',component:Exam2Component},
 {path:'student/stufeedbacks',component:FeedbackComponent},
-{path:'student/stufeedbacks/feedback-1',component:Feedback1Component},
-{path:'student/stufeedbacks/feedback-2',component:Feedback2Component},
+
+
 {path:'student',component:StudentComponent},
 {path:'student/lrngmaterials',component:LearningMaterialsComponent},
 {path:'courses',component:CoursesComponent},
