@@ -77,8 +77,6 @@ const routes: Routes = [
 {path:'student/stuexams/exam1',component:Exam1Component},
 {path:'student/stuexams/exam2',component:Exam2Component},
 {path:'student/stufeedbacks',component:FeedbackComponent},
-
-
 {path:'student',component:StudentComponent},
 {path:'student/lrngmaterials',component:LearningMaterialsComponent},
 {path:'courses',component:CoursesComponent},
@@ -91,7 +89,9 @@ const routes: Routes = [
 {path:'adstcsa2',canActivate:[AuthGuard],component:AdminStuCsa2Component},
 {path:'student/course1',component:Course1Component},
 {path:'student/course2',component:Course2Component},
-{path:'student/course3',component:Course3Component},
+{path:'student/course3',component:Course3Component,children:[{
+  path:'feedbacks3',component:Feedbacks3Component
+}]},
 {path:'student/course4',component:Course4Component},
 {path:'student/course1/exam1',component:Exams1Component},
 {path:'student/course2/exam2',component:Exams2Component},
@@ -115,8 +115,7 @@ const routes: Routes = [
 {path:'trainer/htmlcssvideos',component:HtmlcssvideosComponent},
 {path:'trainer/jsvideos',component:JsvideosComponent},
 {path:'trainer/angvideo',component:AngvideoComponent},
-{path:'trainer/materiallist',component:MateriallistComponent}
-
+{path:'trainer/materiallist',component:MateriallistComponent},
 
 ];
 
