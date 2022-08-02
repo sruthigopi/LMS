@@ -1,12 +1,24 @@
-<table>
-    <tr>
-        <th>Materialtitle</th>
-        <th>MaterialURL</th>
-    </tr>
+<br>
+<br>
+<h1>Material List</h1>
+<br>
+<br>
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Material Title</th>
+        <th scope="col">VideoURL</th>
+        
+      </tr>
+    </thead>
     <tbody>
         <tr *ngFor="let i of materials">
             <td>{{i.Materialtitle}}</td>
             <td>{{i.MaterialURL}}</td>
+            <button (click)="onBackButtonClick()">Send</button>
         
 
         </tr>

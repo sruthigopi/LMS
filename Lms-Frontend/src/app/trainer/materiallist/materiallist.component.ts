@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MaterialService } from 'src/app/material.service';
 import { TrainerLearning } from './material.model';
 
@@ -10,7 +11,11 @@ import { TrainerLearning } from './material.model';
 export class MateriallistComponent implements OnInit {
 
   materials: TrainerLearning[] = [];
-  constructor(private materialService:MaterialService) { }
+  constructor(private materialService:MaterialService,public router:Router) { }
+
+  onBackButtonClick():void{
+    this.router.navigate(['student/course1/lrngmaterials1']);
+  }
 
   ngOnInit(): void {
 
