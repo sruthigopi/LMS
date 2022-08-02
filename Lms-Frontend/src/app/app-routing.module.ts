@@ -58,6 +58,9 @@ import { HtmlcssvideosComponent } from './trainer/htmlcssvideos/htmlcssvideos.co
 import { JsvideosComponent } from './trainer/jsvideos/jsvideos.component';
 import { AngvideoComponent } from './trainer/angvideo/angvideo.component';
 import { MateriallistComponent } from './trainer/materiallist/materiallist.component';
+import { WelcomeComponent } from './student/courses/course1/welcome/welcome.component';
+import { QuestionComponent } from './student/courses/course1/question/question.component';
+import { ExamheaderComponent } from './student/courses/course1/examheader/examheader.component';
 
 
 const routes: Routes = [
@@ -116,6 +119,13 @@ const routes: Routes = [
 {path:'trainer/jsvideos',component:JsvideosComponent},
 {path:'trainer/angvideo',component:AngvideoComponent},
 {path:'trainer/materiallist',component:MateriallistComponent},
+<<<<<<< Updated upstream
+=======
+{path:'student/exam/welcome',component:WelcomeComponent},
+{path:'student/exam/question',component:QuestionComponent},
+{path:'student/exam/examheader',component:ExamheaderComponent}
+
+>>>>>>> Stashed changes
 
 ];
 

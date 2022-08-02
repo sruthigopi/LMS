@@ -9,7 +9,7 @@ export class MaterialService {
 
   constructor(public http:HttpClient) { }
   getMaterials(){
-    console.log('hai');
+    // console.log('hai');
     return this.http.get('http://localhost:3000/materials');
   }
 }
