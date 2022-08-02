@@ -35,7 +35,7 @@ if(res.role=="admin"){
 else{
         localStorage.setItem('token3',res.token3);
           // routed to chane to trainer 
-        this.router.navigate(['trainer']);
+        this.router.navigate(['trainer/trainerhome']);
 }
      
     },

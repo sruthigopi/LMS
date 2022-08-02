@@ -1,5 +1,4 @@
 const express = require("express");
-
 var bodyParser = require('body-parser');
 var cors = require('cors');
 const jwt =require('jsonwebtoken');
@@ -53,7 +52,6 @@ app.post('/studentsignup',(req,res)=>{
         studentedu:studentData.edu,
         stucours:studentData.courses,
         studentpwd:studentData.pwd,
-        //  studate:studate,
         isApproved:false
     }
     console.log(student)
@@ -459,10 +457,13 @@ function approvemailtrainer(id){
                from: 'sruthigopinath42@gmail.com',
                to: trainer. traineremail,
                subject:'Account Approved',
-               html:`Hi ${trainer.trainername}, your account for ict accademy trainer is approved.
-               You can take sessions to ${trainer.tracours} course of ${trainer.tracoubtch} batches.
-               Now you can login using your registerd email Id and password.
-               check the below link <a href="http://localhost:4200/tralogin">here</a>`
+               html:`<h2>Hi, ${trainer.trainername},</h2>
+               <p><b>Your account for ict accademy trainer is approved.</b>
+               You are now a trainer of ${trainer.tracours} course, ${trainer.tracoubtch} batches.
+               Now you can login using your registerd email Id and password.</p>
+               check the below link to know more<a href="http://localhost:4200/tralogin">here</a>
+
+               <p>Thanks for choosing ict accadamy,happy teaching and learning</p>`
               
            };
            transporter.sendMail(mailOptions,function(error,info){
@@ -494,10 +495,13 @@ function approvemail(id){
         from: 'sruthigopinath42@gmail.com',
         to: student.studentemail,
         subject:'Account Approved',
-        html:`Hi ${student.studentname}, your account for ict accademy student is approved.
-        You belong to ${student. stucours} course and ${student.stucouid} batch.\n
-        Now you can login using your registerd email Id and password \n
-        check the below link <a href="http://localhost:4200/stulogin">here</a>`
+        html:`<h2>Hi ${student.studentname}</h2>, 
+        <p><b>Your account for ict accademy student is approved.</b>
+        You belong to ${student. stucours} course and ${student.stucouid} batch.
+        Now you can login using your registerd email Id and password</P>
+        check the below link <a href="http://localhost:4200/stulogin">here</a>
+
+        <p>Thanks for choosing ICT accadamy.happy learning...</p>`
        
     };
     transporter.sendMail(mailOptions,function(error,info){
