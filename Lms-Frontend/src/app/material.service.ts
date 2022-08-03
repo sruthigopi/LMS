@@ -23,30 +23,4 @@ export class MaterialService {
     getMaterial(){
       return this.http.get('http://localhost:3000/materials');
     }
-
-    // add material dsa
-    Addmaterialdsa(formdata:FormData){
-      return this.http.post<any>('http://localhost:3000/trainerdsaaddmaterial',formdata)
-    .subscribe(
-      (res)=>console.log(res)
-      
-    );
-    }
-    // get dsa material
-    getMaterialdsa(){
-      return this.http.get('http://localhost:3000/materialsdsa');
-    }
-    // add csd material
-    Addmaterialcsa(formdata:FormData){
-      return this.http.post<any>('http://localhost:3000/trainercsaaddmaterial',formdata)
-    .subscribe(
-      (res)=>console.log(res)
-      
-    );
-
-    }
-     // get csa material
-     getMaterialcsa(){
-      return this.http.get('http://localhost:3000/materialscsa');
-     }
 }
