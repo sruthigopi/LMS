@@ -10,5 +10,5 @@ var MaterialSchema= new Schema({
     desc:String,
     file:String
 })
-var MaterialDatadsa = mongoose.model('materialsdsa',MaterialSchema);
-module.exports= MaterialDatadsa;
+var MaterialDatacsa = mongoose.model('materialscsa',MaterialSchema);
+module.exports= MaterialDatacsa;
