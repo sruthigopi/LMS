@@ -119,13 +119,10 @@ const routes: Routes = [
 {path:'trainer/jsvideos',component:JsvideosComponent},
 {path:'trainer/angvideo',component:AngvideoComponent},
 {path:'trainer/materiallist',component:MateriallistComponent},
-<<<<<<< Updated upstream
-=======
 {path:'student/exam/welcome',component:WelcomeComponent},
 {path:'student/exam/question',component:QuestionComponent},
 {path:'student/exam/examheader',component:ExamheaderComponent}
 
->>>>>>> Stashed changes
 
 ];
 

@@ -1,13 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose =require('mongoose');
 mongoose.connect('mongodb://localhost:27017/LMS');
 
-const Schema = mongoose.Schema;
 
-var StudentLearningDataSchema = new Schema({
-	title: String,
-	author: String,
-	about: String,
-	rating: String
-});
-var StudentLearningData = mongoose.model('StudentLearningData', StudentLearningDataSchema);
-module.exports = StudentLearningData;
+const Schema =  mongoose.Schema;
+
+var MaterialSchema= new Schema({
+    title:String,
+    url:String,
+    desc:String,
+    file:String
+})
+var MaterialData = mongoose.model('materials',MaterialSchema);
+module.exports= MaterialData;

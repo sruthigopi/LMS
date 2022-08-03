@@ -1,6 +1,14 @@
-export class TrainerLearning{
+// export class TrainerLearning{
+//     constructor(
+//         public Materialtitle:String,
+//         public MaterialURL:String
+//     ){}
+// }
+export class MaterialModel{
     constructor(
-        public Materialtitle:String,
-        public MaterialURL:String
+       public title:string,
+       public url:string,
+       public desc:string,
+       public file:string
     ){}
 }

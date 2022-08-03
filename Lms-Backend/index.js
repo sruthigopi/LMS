@@ -3,8 +3,9 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 const jwt =require('jsonwebtoken');
 const nodemailer = require("nodemailer");
+const multer = require("multer");
 
-const Materiallist=require('./src/model/TrainerLearning');
+const MaterialData= require('./src/model/StudentLearningData');
 const StudentData= require('./src/model/StudentData');
 const TrainerData=require('./src/model/TrainerData');
 
@@ -36,7 +37,44 @@ function verifyToken(req,res,next){
     next()
 }
 
+const DIR ='../Lms-Frontend/src/assets/uploads' ;
+const storage = multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null,DIR);
+    },
+    filename:(req,file,cb)=>{
+        const fileName = file.originalname.toLocaleLowerCase();
+        cb(null,fileName);
+    }
+});
+var upload = multer({storage:storage})
 
+app.post('/traineraddmaterial',upload.single('file'), (req,res)=>{
+const file=req.file;
+console.log(file.filename);
+console.log(req.body);
+ var materials=MaterialData({
+    title:req.body.title,
+    url:req.body. url,
+    desc:req.body.desc,
+    file:req.file.filename
+ });
+ materials=materials.save();
+ res.send();
+})
+
+// getting learning material
+  
+  app.get('/materials',verifyToken,function(req,res){
+    console.log('ok');
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+    MaterialData.find()
+    .then(function(materials){
+        console.log(materials);
+        res.send(materials);
+    });
+});
 
 // signup and login portion
 
@@ -180,7 +218,6 @@ app.get('/trainerdetails',verifyToken,function(req,res){
        
     });
 });
-
     // approve students
 app.put('/approve',verifyToken,function(req,res){
     console.log(req.body);
@@ -515,18 +552,25 @@ function approvemail(id){
         }
     })
     })
-
-    app.get('/materials',function(req,res){
-        console.log("hai welcome");
-        res.header("Access-Control-Allow-Origin","*");
-        res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
-        Materiallist.find().then(function(material){
-            console.log("heello");
-            res.send(material);
-        })
-
-    })
 }
+// app.get('/materials',function(req,res){
+//     console.log("hai welcome");
+//     res.header("Access-Control-Allow-Origin","*");
+//     res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+//     Materiallist.find().then(function(material){
+//         console.log("heello");
+//         res.send(material);
+//     })
+
+// })
+// add learning material
+
+// multer
+
+
+
+
+
 app.listen(3000,()=>{
     console.log('server is ready');
 });
