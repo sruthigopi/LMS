@@ -31,8 +31,5 @@ export class StudentSignupComponent implements OnInit {
   this.authService.studentSignup(this.Student);
   alert('Congratulations, Your Account Has Been Successfully Created.');
   this.router.navigate(['stulogin']); 
-
- 
-
-  }
+ }
 }
