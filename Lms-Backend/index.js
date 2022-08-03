@@ -517,9 +517,11 @@ function approvemail(id){
     })
 
     app.get('/materials',function(req,res){
+        console.log("hai welcome");
         res.header("Access-Control-Allow-Origin","*");
         res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
         Materiallist.find().then(function(material){
+            console.log("heello");
             res.send(material);
         })
 

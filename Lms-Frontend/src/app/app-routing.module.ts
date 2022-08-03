@@ -1,3 +1,4 @@
+
 import { Feedbacks2Component } from './student/courses/course2/feedbacks2/feedbacks2.component';
 import { Feedbacks1Component } from './student/courses/course1/feedbacks1/feedbacks1.component';
 import { Exams2Component } from './student/courses/course2/exams2/exams2.component';
@@ -14,9 +15,9 @@ import { Course4Component } from './student/courses/course4/course4.component';
 import { Course3Component } from './student/courses/course3/course3.component';
 import { Course2Component } from './student/courses/course2/course2.component';
 import { Course1Component } from './student/courses/course1/course1.component';
-import { Feedback2Component } from './student/feedback/feedback2/feedback2.component';
+
 import { Exam2Component } from './student/exam/exam2/exam2.component';
-import { Feedback1Component } from './student/feedback/feedback1/feedback1.component';
+
 import { Exam1Component } from './student/exam/exam1/exam1.component';
 import { LearningMaterialsComponent } from './student/learning-materials/learning-materials.component';
 import { FeedbackComponent } from './student/feedback/feedback.component';
@@ -57,6 +58,9 @@ import { HtmlcssvideosComponent } from './trainer/htmlcssvideos/htmlcssvideos.co
 import { JsvideosComponent } from './trainer/jsvideos/jsvideos.component';
 import { AngvideoComponent } from './trainer/angvideo/angvideo.component';
 import { MateriallistComponent } from './trainer/materiallist/materiallist.component';
+import { WelcomeComponent } from './student/courses/course1/welcome/welcome.component';
+import { QuestionComponent } from './student/courses/course1/question/question.component';
+import { ExamheaderComponent } from './student/courses/course1/examheader/examheader.component';
 
 
 const routes: Routes = [
@@ -76,8 +80,6 @@ const routes: Routes = [
 {path:'student/stuexams/exam1',component:Exam1Component},
 {path:'student/stuexams/exam2',component:Exam2Component},
 {path:'student/stufeedbacks',component:FeedbackComponent},
-{path:'student/stufeedbacks/feedback-1',component:Feedback1Component},
-{path:'student/stufeedbacks/feedback-2',component:Feedback2Component},
 {path:'student',component:StudentComponent},
 {path:'student/lrngmaterials',component:LearningMaterialsComponent},
 {path:'courses',component:CoursesComponent},
@@ -90,7 +92,9 @@ const routes: Routes = [
 {path:'adstcsa2',canActivate:[AuthGuard],component:AdminStuCsa2Component},
 {path:'student/course1',component:Course1Component},
 {path:'student/course2',component:Course2Component},
-{path:'student/course3',component:Course3Component},
+{path:'student/course3',component:Course3Component,children:[{
+  path:'feedbacks3',component:Feedbacks3Component
+}]},
 {path:'student/course4',component:Course4Component},
 {path:'student/course1/exam1',component:Exams1Component},
 {path:'student/course2/exam2',component:Exams2Component},
@@ -114,8 +118,14 @@ const routes: Routes = [
 {path:'trainer/htmlcssvideos',component:HtmlcssvideosComponent},
 {path:'trainer/jsvideos',component:JsvideosComponent},
 {path:'trainer/angvideo',component:AngvideoComponent},
-{path:'trainer/materiallist',component:MateriallistComponent}
+{path:'trainer/materiallist',component:MateriallistComponent},
+<<<<<<< Updated upstream
+=======
+{path:'student/exam/welcome',component:WelcomeComponent},
+{path:'student/exam/question',component:QuestionComponent},
+{path:'student/exam/examheader',component:ExamheaderComponent}
 
+>>>>>>> Stashed changes
 
 ];
 

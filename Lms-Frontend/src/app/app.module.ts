@@ -63,6 +63,10 @@ import { JsvideosComponent } from './trainer/jsvideos/jsvideos.component';
 import { AngvideoComponent } from './trainer/angvideo/angvideo.component';
 import { HtmlcssvideosComponent } from './trainer/htmlcssvideos/htmlcssvideos.component';
 import { MateriallistComponent } from './trainer/materiallist/materiallist.component';
+import { WelcomeComponent } from './student/courses/course1/welcome/welcome.component';
+import { QuestionComponent } from './student/courses/course1/question/question.component';
+import { ExamheaderComponent } from './student/courses/course1/examheader/examheader.component';
+
 
 
 
@@ -121,6 +125,10 @@ import { MateriallistComponent } from './trainer/materiallist/materiallist.compo
     AngvideoComponent,
     HtmlcssvideosComponent,
     MateriallistComponent,
+    WelcomeComponent,
+    QuestionComponent,
+    ExamheaderComponent,
+   
    
 
   ],

@@ -21,7 +21,9 @@ export class MateriallistComponent implements OnInit {
 
     this.materialService.getMaterials().
     subscribe((data)=>{
+      console.log("data");
       this.materials=JSON.parse(JSON.stringify(data));
+      console.log(this.materials);
     })
   }
 

@@ -9,5 +9,5 @@ const LMaterials=new Schema(
         MaterialURL:String
     }
 )
-const Materiallist=mongoose.model('material',LMaterials);
+const Materiallist=mongoose.model('materials',LMaterials);
 module.exports=Materiallist;
