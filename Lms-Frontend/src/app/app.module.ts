@@ -117,7 +117,7 @@ import { ExamheaderComponent } from './student/courses/course1/examheader/examhe
     AdminMainComponent,
     TrainerhomeComponent,
     FsdcourseComponent,
-    
+    Course3Component,
     TrainerexamsComponent,
     TrainerfeedbackComponent,
     TrainerlearningmaterialsComponent,
@@ -128,8 +128,8 @@ import { ExamheaderComponent } from './student/courses/course1/examheader/examhe
     WelcomeComponent,
     QuestionComponent,
     ExamheaderComponent,
-   
-   
+    Lrngmaterials1Component,
+    Feedbacks1Component
 
   ],
   imports: [

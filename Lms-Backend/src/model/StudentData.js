@@ -1,7 +1,5 @@
 const mongoose =require('mongoose');
 mongoose.connect('mongodb://localhost:27017/LMS');
-
-
 const Schema=  mongoose.Schema;
 
 var StudentSchema= new Schema({
