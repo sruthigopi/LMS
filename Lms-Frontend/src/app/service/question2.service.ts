@@ -8,6 +8,6 @@ export class Question2Service {
 
   constructor(private http:HttpClient) { }
   getQuestion2Json(){
-    return this.http.get<any>("/assets/questions.json");
+    return this.http.get<any>("/assets/question2.json");
   }
 }
