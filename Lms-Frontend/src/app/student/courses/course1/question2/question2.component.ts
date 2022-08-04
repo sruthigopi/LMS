@@ -1,14 +1,14 @@
-import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { interval } from 'rxjs';
-import { QuestionService } from 'src/app/service/question.service';
+import { Question2Service } from 'src/app/service/question2.service';
 
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  selector: 'app-question2',
+  templateUrl: './question2.component.html',
+  styleUrls: ['./question2.component.css']
 })
-export class QuestionComponent implements OnInit {
+export class Question2Component implements OnInit {
 
   public questionList:any=[];
   public currentQuestion:number=0;
@@ -22,18 +22,17 @@ export class QuestionComponent implements OnInit {
   public course:String="";
 
 
-
-  constructor( private questionService:QuestionService) { }
+  constructor(private question2Service:Question2Service,public router:Router) { }
 
   ngOnInit(): void {
-    
+
     this.name=localStorage.getItem("name")!;
     this.course=localStorage.getItem("course")!;
     this.getAllQuestions();
     this.startCounter();
   }
   getAllQuestions(){
-    this.questionService.getQuestionJson()
+    this.question2Service.getQuestion2Json()
     .subscribe(res=>{
       // console.log(res.questions);
       this.questionList=res.questions;
@@ -99,4 +98,13 @@ resetQuiz()
   this.points=0;
   this.counter=60;
   this.currentQuestion=0;
-}}
+}
+onTransfer(){
+  this.router.navigate(['/trainer/trainerexams']);
+
+}
+  
+}
+
+
+

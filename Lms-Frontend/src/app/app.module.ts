@@ -65,7 +65,10 @@ import { HtmlcssvideosComponent } from './trainer/htmlcssvideos/htmlcssvideos.co
 import { MateriallistComponent } from './trainer/materiallist/materiallist.component';
 import { WelcomeComponent } from './student/courses/course1/welcome/welcome.component';
 import { QuestionComponent } from './student/courses/course1/question/question.component';
-import { ExamheaderComponent } from './student/courses/course1/examheader/examheader.component';
+import { Question1Component } from './student/courses/course1/question1/question1.component';
+import { Welcome1Component } from './student/courses/course1/welcome1/welcome1.component';
+import { Question2Component } from './student/courses/course1/question2/question2.component';
+import { Welcome2Component } from './student/courses/course1/welcome2/welcome2.component';
 
 
 
@@ -127,9 +130,13 @@ import { ExamheaderComponent } from './student/courses/course1/examheader/examhe
     MateriallistComponent,
     WelcomeComponent,
     QuestionComponent,
-    ExamheaderComponent,
+    
     Lrngmaterials1Component,
-    Feedbacks1Component
+    Feedbacks1Component,
+    Question1Component,
+    Welcome1Component,
+    Question2Component,
+    Welcome2Component
 
   ],
   imports: [

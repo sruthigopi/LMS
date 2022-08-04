@@ -60,7 +60,10 @@ import { AngvideoComponent } from './trainer/angvideo/angvideo.component';
 import { MateriallistComponent } from './trainer/materiallist/materiallist.component';
 import { WelcomeComponent } from './student/courses/course1/welcome/welcome.component';
 import { QuestionComponent } from './student/courses/course1/question/question.component';
-import { ExamheaderComponent } from './student/courses/course1/examheader/examheader.component';
+import { Welcome1Component } from './student/courses/course1/welcome1/welcome1.component';
+import { Question1Component } from './student/courses/course1/question1/question1.component';
+import { Question2Component } from './student/courses/course1/question2/question2.component';
+import { Welcome2Component } from './student/courses/course1/welcome2/welcome2.component';
 
 
 const routes: Routes = [
@@ -121,7 +124,11 @@ const routes: Routes = [
 {path:'trainer/materiallist',component:MateriallistComponent},
 {path:'student/exam/welcome',component:WelcomeComponent},
 {path:'student/exam/question',component:QuestionComponent},
-{path:'student/exam/examheader',component:ExamheaderComponent}
+{path:'student/exam/welcome1',component:Welcome1Component},
+{path:'student/exam/question1',component:Question1Component},
+{path:'student/exam/question2',component:Question2Component},
+{path:'student/exam/welcome2',component:Welcome2Component}
+
 
 
 ];

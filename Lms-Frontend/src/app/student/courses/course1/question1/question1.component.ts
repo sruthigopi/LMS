@@ -1,14 +1,13 @@
-import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Question1Service } from 'src/app/service/question1.service';
 import { interval } from 'rxjs';
-import { QuestionService } from 'src/app/service/question.service';
 
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  selector: 'app-question1',
+  templateUrl: './question1.component.html',
+  styleUrls: ['./question1.component.css']
 })
-export class QuestionComponent implements OnInit {
+export class Question1Component implements OnInit {
 
   public questionList:any=[];
   public currentQuestion:number=0;
@@ -22,18 +21,16 @@ export class QuestionComponent implements OnInit {
   public course:String="";
 
 
-
-  constructor( private questionService:QuestionService) { }
+  constructor(private question1Service:Question1Service) { }
 
   ngOnInit(): void {
-    
     this.name=localStorage.getItem("name")!;
     this.course=localStorage.getItem("course")!;
     this.getAllQuestions();
     this.startCounter();
   }
   getAllQuestions(){
-    this.questionService.getQuestionJson()
+    this.question1Service.getQuestion1Json()
     .subscribe(res=>{
       // console.log(res.questions);
       this.questionList=res.questions;
