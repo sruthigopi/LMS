@@ -5,7 +5,7 @@
            
             <ng-container *ngIf="!isQuizCompleted">
             <div class="quiz-header">
-                <h2 style="font-family:cursive">Angular and Typescript exam</h2>
+                <h2 style="font-family:cursive">HTML/CSS exam</h2>
                 <span style="font-style:italic">Welcome {{name}}</span>
             </div>
         
@@ -76,9 +76,10 @@
                               
                             </tbody>
                           </table>
-                       <button>Submit</button>
+                       <button (click)="onTransfer()">Submit</button>
                         
                     </div>
                 </div>
             </ng-container>
           </div>
+

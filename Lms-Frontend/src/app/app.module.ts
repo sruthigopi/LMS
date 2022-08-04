@@ -65,13 +65,10 @@ import { HtmlcssvideosComponent } from './trainer/htmlcssvideos/htmlcssvideos.co
 import { MateriallistComponent } from './trainer/materiallist/materiallist.component';
 import { WelcomeComponent } from './student/courses/course1/welcome/welcome.component';
 import { QuestionComponent } from './student/courses/course1/question/question.component';
-import { ExamheaderComponent } from './student/courses/course1/examheader/examheader.component';
-import { DSAcourseComponent } from './trainer/dsacourse/dsacourse.component';
-import { LearningmaterialComponent } from './trainer/dsacourse/learningmaterial/learningmaterial.component';
-import { AdddsalearningmaterialComponent } from './trainer/dsacourse/adddsalearningmaterial/adddsalearningmaterial.component';
-import { CSAcourseComponent } from './trainer/csacourse/csacourse.component';
-import { AddcsalearningmaterialComponent } from './trainer/csacourse/addcsalearningmaterial/addcsalearningmaterial.component';
-import { LearnigmaterialComponent } from './trainer/csacourse/learnigmaterial/learnigmaterial.component';
+import { Question1Component } from './student/courses/course1/question1/question1.component';
+import { Welcome1Component } from './student/courses/course1/welcome1/welcome1.component';
+import { Question2Component } from './student/courses/course1/question2/question2.component';
+import { Welcome2Component } from './student/courses/course1/welcome2/welcome2.component';
 
 
 
@@ -133,15 +130,13 @@ import { LearnigmaterialComponent } from './trainer/csacourse/learnigmaterial/le
     MateriallistComponent,
     WelcomeComponent,
     QuestionComponent,
-    ExamheaderComponent,
+    
     Lrngmaterials1Component,
     Feedbacks1Component,
-    DSAcourseComponent,
-    LearningmaterialComponent,
-    AdddsalearningmaterialComponent,
-    CSAcourseComponent,
-    AddcsalearningmaterialComponent,
-    LearnigmaterialComponent
+    Question1Component,
+    Welcome1Component,
+    Question2Component,
+    Welcome2Component
 
   ],
   imports: [
