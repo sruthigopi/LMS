@@ -6,8 +6,10 @@ const nodemailer = require("nodemailer");
 const multer = require("multer");
 
 const MaterialData= require('./src/model/StudentLearningData');
+const MaterialDatacsa=require('./src/model/LearningMaterial');
 const StudentData= require('./src/model/StudentData');
 const TrainerData=require('./src/model/TrainerData');
+const MaterialDatadsa=require('./src/model/TrainerLearning');
 
 var app = express();
 app.use(bodyParser.json());
@@ -37,6 +39,7 @@ function verifyToken(req,res,next){
     next()
 }
 
+// multer
 const DIR ='../Lms-Frontend/src/assets/uploads' ;
 const storage = multer.diskStorage({
     destination:(req,file,cb)=>{
@@ -48,7 +51,7 @@ const storage = multer.diskStorage({
     }
 });
 var upload = multer({storage:storage})
-
+// add trainerfsd
 app.post('/traineraddmaterial',upload.single('file'), (req,res)=>{
 const file=req.file;
 console.log(file.filename);
@@ -62,14 +65,64 @@ console.log(req.body);
  materials=materials.save();
  res.send();
 })
-
-// getting learning material
+// add trainerdsa maerial
+app.post('/trainerdsaaddmaterial',upload.single('file'), (req,res)=>{
+    const file=req.file;
+    console.log(file.filename);
+    console.log(req.body);
+     var materials=MaterialDatadsa({
+        title:req.body.title,
+        url:req.body. url,
+        desc:req.body.desc,
+        file:req.file.filename
+     });
+     materials=materials.save();
+     res.send();
+    })
+// add csa material
+app.post('/trainercsaaddmaterial',upload.single('file'), (req,res)=>{
+    const file=req.file;
+    console.log(file.filename);
+    console.log(req.body);
+     var materials=MaterialDatacsa({
+        title:req.body.title,
+        url:req.body. url,
+        desc:req.body.desc,
+        file:req.file.filename
+     });
+     materials=materials.save();
+     res.send();
+    })
+// getting learning material fsd
   
-  app.get('/materials',verifyToken,function(req,res){
+  app.get('/materials',function(req,res){
     console.log('ok');
     res.header("Access-Control-Allow-Origin","*");
     res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
     MaterialData.find()
+    .then(function(materials){
+        console.log(materials);
+        res.send(materials);
+    });
+});
+// get dsa learning material
+app.get('/materialsdsa',function(req,res){
+    console.log('ok');
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+    MaterialDatadsa.find()
+    .then(function(materials){
+        console.log(materials);
+        res.send(materials);
+    });
+});
+
+// getting csa material
+app.get('/materialscsa',function(req,res){
+    console.log('ok');
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Methods: POST,PATCH, GET, DELETE, PUT, OPTIONS");
+    MaterialDatacsa.find()
     .then(function(materials){
         console.log(materials);
         res.send(materials);

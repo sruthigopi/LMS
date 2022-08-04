@@ -66,6 +66,12 @@ import { MateriallistComponent } from './trainer/materiallist/materiallist.compo
 import { WelcomeComponent } from './student/courses/course1/welcome/welcome.component';
 import { QuestionComponent } from './student/courses/course1/question/question.component';
 import { ExamheaderComponent } from './student/courses/course1/examheader/examheader.component';
+import { DSAcourseComponent } from './trainer/dsacourse/dsacourse.component';
+import { LearningmaterialComponent } from './trainer/dsacourse/learningmaterial/learningmaterial.component';
+import { AdddsalearningmaterialComponent } from './trainer/dsacourse/adddsalearningmaterial/adddsalearningmaterial.component';
+import { CSAcourseComponent } from './trainer/csacourse/csacourse.component';
+import { AddcsalearningmaterialComponent } from './trainer/csacourse/addcsalearningmaterial/addcsalearningmaterial.component';
+import { LearnigmaterialComponent } from './trainer/csacourse/learnigmaterial/learnigmaterial.component';
 
 
 
@@ -129,7 +135,13 @@ import { ExamheaderComponent } from './student/courses/course1/examheader/examhe
     QuestionComponent,
     ExamheaderComponent,
     Lrngmaterials1Component,
-    Feedbacks1Component
+    Feedbacks1Component,
+    DSAcourseComponent,
+    LearningmaterialComponent,
+    AdddsalearningmaterialComponent,
+    CSAcourseComponent,
+    AddcsalearningmaterialComponent,
+    LearnigmaterialComponent
 
   ],
   imports: [

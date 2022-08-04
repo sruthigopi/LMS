@@ -61,6 +61,12 @@ import { MateriallistComponent } from './trainer/materiallist/materiallist.compo
 import { WelcomeComponent } from './student/courses/course1/welcome/welcome.component';
 import { QuestionComponent } from './student/courses/course1/question/question.component';
 import { ExamheaderComponent } from './student/courses/course1/examheader/examheader.component';
+import { DSAcourseComponent } from './trainer/dsacourse/dsacourse.component';
+import { LearningmaterialComponent } from './trainer/dsacourse/learningmaterial/learningmaterial.component';
+import { AdddsalearningmaterialComponent } from './trainer/dsacourse/adddsalearningmaterial/adddsalearningmaterial.component';
+import { CSAcourseComponent } from './trainer/csacourse/csacourse.component';
+import { LearnigmaterialComponent } from './trainer/csacourse/learnigmaterial/learnigmaterial.component';
+import { AddcsalearningmaterialComponent } from './trainer/csacourse/addcsalearningmaterial/addcsalearningmaterial.component';
 
 
 const routes: Routes = [
@@ -121,8 +127,13 @@ const routes: Routes = [
 {path:'trainer/materiallist',component:MateriallistComponent},
 {path:'student/exam/welcome',component:WelcomeComponent},
 {path:'student/exam/question',component:QuestionComponent},
-{path:'student/exam/examheader',component:ExamheaderComponent}
-
+{path:'student/exam/examheader',component:ExamheaderComponent},
+{path:'trainerdsa',component:DSAcourseComponent},
+{path:'learmatedsa',component:LearningmaterialComponent},
+{path:'adddsalearmat',component:AdddsalearningmaterialComponent},
+{path:'trainercsa',component:CSAcourseComponent},
+{path:'learmatcsa',component:LearnigmaterialComponent},
+{path:'addcsalearmat',component:AddcsalearningmaterialComponent},
 
 ];
 
