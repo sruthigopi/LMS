@@ -9,7 +9,8 @@ const MaterialData= require('./src/model/StudentLearningData');
 const MaterialDatacsa=require('./src/model/LearningMaterial');
 const StudentData= require('./src/model/StudentData');
 const TrainerData=require('./src/model/TrainerData');
-const MaterialDatadsa=require('./src/model/TrainerLearning');
+const MaterialDatadsa=require('./src/model/TrainerLearning')
+// const MaterialDatadsa=require('./src/model/TrainerLearning');
 
 var app = express();
 app.use(bodyParser.json());
