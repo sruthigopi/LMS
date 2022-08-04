@@ -1,12 +1,11 @@
 import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'app-welcome',
-  templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  selector: 'app-welcome2',
+  templateUrl: './welcome2.component.html',
+  styleUrls: ['./welcome2.component.css']
 })
-export class WelcomeComponent implements OnInit {
-
+export class Welcome2Component implements OnInit {
   @ViewChild('name') nameKey!:ElementRef;
   constructor() { }
 
@@ -16,5 +15,4 @@ export class WelcomeComponent implements OnInit {
     localStorage.setItem("name",this.nameKey.nativeElement.value);
     localStorage.setItem("course",this.nameKey.nativeElement.value);
   }
-
 }
