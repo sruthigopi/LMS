@@ -60,6 +60,13 @@ import { AngvideoComponent } from './trainer/angvideo/angvideo.component';
 import { MateriallistComponent } from './trainer/materiallist/materiallist.component';
 import { WelcomeComponent } from './student/courses/course1/welcome/welcome.component';
 import { QuestionComponent } from './student/courses/course1/question/question.component';
+// import { ExamheaderComponent } from './student/courses/course1/examheader/examheader.component';
+import { DSAcourseComponent } from './trainer/dsacourse/dsacourse.component';
+import { LearningmaterialComponent } from './trainer/dsacourse/learningmaterial/learningmaterial.component';
+import { AdddsalearningmaterialComponent } from './trainer/dsacourse/adddsalearningmaterial/adddsalearningmaterial.component';
+import { CSAcourseComponent } from './trainer/csacourse/csacourse.component';
+import { LearnigmaterialComponent } from './trainer/csacourse/learnigmaterial/learnigmaterial.component';
+import { AddcsalearningmaterialComponent } from './trainer/csacourse/addcsalearningmaterial/addcsalearningmaterial.component';
 import { Welcome1Component } from './student/courses/course1/welcome1/welcome1.component';
 import { Question1Component } from './student/courses/course1/question1/question1.component';
 import { Question2Component } from './student/courses/course1/question2/question2.component';
@@ -124,12 +131,13 @@ const routes: Routes = [
 {path:'trainer/materiallist',component:MateriallistComponent},
 {path:'student/exam/welcome',component:WelcomeComponent},
 {path:'student/exam/question',component:QuestionComponent},
-{path:'student/exam/welcome1',component:Welcome1Component},
-{path:'student/exam/question1',component:Question1Component},
-{path:'student/exam/question2',component:Question2Component},
-{path:'student/exam/welcome2',component:Welcome2Component}
-
-
+// {path:'student/exam/examheader',component:ExamheaderComponent},
+{path:'trainerdsa',component:DSAcourseComponent},
+{path:'learmatedsa',component:LearningmaterialComponent},
+{path:'adddsalearmat',component:AdddsalearningmaterialComponent},
+{path:'trainercsa',component:CSAcourseComponent},
+{path:'learmatcsa',component:LearnigmaterialComponent},
+{path:'addcsalearmat',component:AddcsalearningmaterialComponent},
 
 ];
 
