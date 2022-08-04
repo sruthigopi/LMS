@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
@@ -7,13 +7,9 @@ import { Router } from '@angular/router';
 })
 export class StudentComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-  logoutStudent(){
-    localStorage.removeItem('token');
-    this.router.navigate(['stulogin']);
-  }
-  }
 
+}
