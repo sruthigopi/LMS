@@ -27,7 +27,7 @@
           
          </ul>
         <form class="d-flex" role="search">
-          <button class="btn btn-outline-success" routerLink="/adlogin" type="submit" *ngIf="!authService.getTokenAdmin()">Login</button>
+          <button class="btn btn-outline-success" routerLink="/tralogin" type="submit" *ngIf="!authService.getTokenAdmin()">Login</button>
           <button class="btn btn-outline-success"  type="submit" (click)="logoutAdmin()" *ngIf="authService.getTokenAdmin()">Signout</button>
         </form>
       </div>

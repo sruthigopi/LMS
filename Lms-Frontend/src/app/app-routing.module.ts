@@ -86,7 +86,7 @@ const routes: Routes = [
 {path:'stuhome',canActivate:[AuthGuard],component:AdmStudentComponent},
 {path:'stuudt',canActivate:[AuthGuard],component:UpdateStuComponent},
 {path:'traudt',canActivate:[AuthGuard],component:UpdateTraComponent},
-{path:'student/stuexams',component:ExamComponent},
+{path:'student/stuexams', component:ExamComponent},
 {path:'student/stuexams/exam1',component:Exam1Component},
 {path:'student/stuexams/exam2',component:Exam2Component},
 {path:'student/stufeedbacks',component:FeedbackComponent},
