@@ -138,7 +138,10 @@ const routes: Routes = [
 {path:'trainercsa',component:CSAcourseComponent},
 {path:'learmatcsa',component:LearnigmaterialComponent},
 {path:'addcsalearmat',component:AddcsalearningmaterialComponent},
-
+{path:'student/exam/welcome1',component:Welcome1Component},
+{path:'student/exam/welcome2',component:Welcome2Component},
+{path:'student/exam/question',component:Question1Component},
+{path:'student/exam/question',component:Question2Component}
 ];
 
 
