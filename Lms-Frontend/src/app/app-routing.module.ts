@@ -140,8 +140,8 @@ const routes: Routes = [
 {path:'addcsalearmat',component:AddcsalearningmaterialComponent},
 {path:'student/exam/welcome1',component:Welcome1Component},
 {path:'student/exam/welcome2',component:Welcome2Component},
-{path:'student/exam/question',component:Question1Component},
-{path:'student/exam/question',component:Question2Component}
+{path:'student/exam/question1',component:Question1Component},
+{path:'student/exam/question2',component:Question2Component}
 ];
 
 
