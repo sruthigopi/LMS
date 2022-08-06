@@ -71,10 +71,9 @@ import { Welcome1Component } from './student/courses/course1/welcome1/welcome1.c
 import { Question1Component } from './student/courses/course1/question1/question1.component';
 import { Question2Component } from './student/courses/course1/question2/question2.component';
 import { Welcome2Component } from './student/courses/course1/welcome2/welcome2.component';
-<<<<<<< Updated upstream
+
 import { StudentAuthGuard } from './student-auth.guard';
 import { TrainerAuthGuard } from './trainer-auth.guard';
-=======
 import { Welcome1dsComponent } from './student/courses/course3/welcome1ds/welcome1ds.component';
 import { Welcome2dsComponent } from './student/courses/course3/welcome2ds/welcome2ds.component';
 import { Welcome3dsComponent } from './student/courses/course3/welcome3ds/welcome3ds.component';
@@ -82,7 +81,6 @@ import { Question1dsComponent } from './student/courses/course3/question1ds/ques
 import { Question2dsComponent } from './student/courses/course3/question2ds/question2ds.component';
 import { Question3dsComponent } from './student/courses/course3/question3ds/question3ds.component';
 
->>>>>>> Stashed changes
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
@@ -163,10 +161,7 @@ const routes: Routes = [
 {path:'student/exam/welcome1',component:Welcome1Component},
 {path:'student/exam/welcome2',component:Welcome2Component},
 {path:'student/exam/question1',component:Question1Component},
-<<<<<<< Updated upstream
-{path:'student/exam/question2',component:Question2Component}
-
-=======
+{path:'student/exam/question2',component:Question2Component},
 {path:'student/exam/question2',component:Question2Component},
 {path:'student/exam/welcome1ds',component:Welcome1dsComponent},
 {path:'student/exam/welcome2ds',component:Welcome2dsComponent},
@@ -174,7 +169,6 @@ const routes: Routes = [
 {path:'student/exam/question1ds',component:Question1dsComponent},
 {path:'student/exam/question2ds',component:Question2dsComponent},
 {path:'student/exam/question3ds',component:Question3dsComponent}
->>>>>>> Stashed changes
 ];
 
 
