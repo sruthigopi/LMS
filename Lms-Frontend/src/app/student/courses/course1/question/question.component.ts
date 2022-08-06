@@ -1,5 +1,6 @@
 import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { interval } from 'rxjs';
 import { QuestionService } from 'src/app/service/question.service';
 
@@ -20,15 +21,16 @@ export class QuestionComponent implements OnInit {
   isQuizCompleted:boolean=false;
   public name:String="";
   public course:String="";
+  
 
 
 
-  constructor( private questionService:QuestionService) { }
+  constructor( private questionService:QuestionService,public router:Router) { }
 
   ngOnInit(): void {
     
     this.name=localStorage.getItem("name")!;
-    this.course=localStorage.getItem("course")!;
+    // this.course=localStorage.getItem("course")!;
     this.getAllQuestions();
     this.startCounter();
   }
@@ -99,4 +101,10 @@ resetQuiz()
   this.points=0;
   this.counter=60;
   this.currentQuestion=0;
-}}
+}
+onTransfer(){
+  
+  alert("hi");
+  this.router.navigate(["trainer/trainerexams"])
+}
+}

@@ -47,7 +47,7 @@ import { AdminStuDsa02Component } from './admin/admin-stu-dsa02/admin-stu-dsa02.
 import { AdminStuCsa1Component } from './admin/admin-stu-csa1/admin-stu-csa1.component';
 import { AdminStuCsa2Component } from './admin/admin-stu-csa2/admin-stu-csa2.component';
 // import { AdminMainComponent } from './admin/admin-main/admin-main.component';
-import { AdminMainComponent } from './admin/admin-main/admin-main.component';
+// import { AdminMainComponent } from './admin/admin-main/admin-main.component';
 import { TrainerhomeComponent } from './trainer/trainerhome/trainerhome.component';
 import { FsdcourseComponent } from './trainer/fsdcourse/fsdcourse.component';
 
@@ -135,12 +135,25 @@ const routes: Routes = [
 {path:'student/exam/welcome',canActivate:[TrainerAuthGuard],component:WelcomeComponent},
 {path:'student/exam/question',canActivate:[TrainerAuthGuard],component:QuestionComponent},
 // {path:'student/exam/examheader',component:ExamheaderComponent},
+
 {path:'trainerdsa',canActivate:[TrainerAuthGuard],component:DSAcourseComponent},
 {path:'learmatedsa',canActivate:[TrainerAuthGuard],component:LearningmaterialComponent},
 {path:'adddsalearmat',canActivate:[TrainerAuthGuard],component:AdddsalearningmaterialComponent},
 {path:'trainercsa',canActivate:[TrainerAuthGuard],component:CSAcourseComponent},
 {path:'learmatcsa',canActivate:[TrainerAuthGuard],component:LearnigmaterialComponent},
 {path:'addcsalearmat',canActivate:[TrainerAuthGuard],component:AddcsalearningmaterialComponent},
+
+
+{path:'trainerdsa',component:DSAcourseComponent},
+{path:'learmatedsa',component:LearningmaterialComponent},
+{path:'adddsalearmat',component:AdddsalearningmaterialComponent},
+{path:'trainercsa',component:CSAcourseComponent},
+{path:'learmatcsa',component:LearnigmaterialComponent},
+{path:'addcsalearmat',component:AddcsalearningmaterialComponent},
+{path:'student/exam/welcome1',component:Welcome1Component},
+{path:'student/exam/welcome2',component:Welcome2Component},
+{path:'student/exam/question1',component:Question1Component},
+{path:'student/exam/question2',component:Question2Component}
 
 ];
 

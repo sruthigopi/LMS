@@ -72,6 +72,11 @@ import { AdddsalearningmaterialComponent } from './trainer/dsacourse/adddsalearn
 import { CSAcourseComponent } from './trainer/csacourse/csacourse.component';
 import { AddcsalearningmaterialComponent } from './trainer/csacourse/addcsalearningmaterial/addcsalearningmaterial.component';
 import { LearnigmaterialComponent } from './trainer/csacourse/learnigmaterial/learnigmaterial.component';
+import { Welcome1Component } from './student/courses/course1/welcome1/welcome1.component';
+import { Question1Component } from './student/courses/course1/question1/question1.component';
+import { Question2Component } from './student/courses/course1/question2/question2.component';
+import { Welcome2Component } from './student/courses/course1/welcome2/welcome2.component';
+
 
 
 
@@ -141,7 +146,12 @@ import { LearnigmaterialComponent } from './trainer/csacourse/learnigmaterial/le
     AdddsalearningmaterialComponent,
     CSAcourseComponent,
     AddcsalearningmaterialComponent,
-    LearnigmaterialComponent
+    LearnigmaterialComponent,
+    Welcome1Component,
+    Question1Component,
+    Question2Component,
+    Welcome2Component
+    
 
   ],
   imports: [

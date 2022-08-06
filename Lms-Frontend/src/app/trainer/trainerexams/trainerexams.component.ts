@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerexamsComponent implements OnInit {
 
+
+  public questionList:any=[];
+  correctAnswer:number=0;
+  incorrectAnswer:number=0;
+  public points:number=0;
+
   constructor() { }
 
   ngOnInit(): void {
