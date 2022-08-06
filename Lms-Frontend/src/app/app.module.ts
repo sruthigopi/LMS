@@ -5,7 +5,7 @@ import { HttpClientModule,HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/co
 import { AuthService } from './auth.service';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { AppRoutingModule } from './app-routing.module';
-
+// import { StudentAuthGuard } from './student-auth.guard';
 
 import { AppComponent } from './app.component';
 import { ExamComponent } from './student/exam/exam.component';

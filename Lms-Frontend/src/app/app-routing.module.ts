@@ -71,7 +71,8 @@ import { Welcome1Component } from './student/courses/course1/welcome1/welcome1.c
 import { Question1Component } from './student/courses/course1/question1/question1.component';
 import { Question2Component } from './student/courses/course1/question2/question2.component';
 import { Welcome2Component } from './student/courses/course1/welcome2/welcome2.component';
-
+import { StudentAuthGuard } from './student-auth.guard';
+import { TrainerAuthGuard } from './trainer-auth.guard';
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
@@ -86,13 +87,14 @@ const routes: Routes = [
 {path:'stuhome',canActivate:[AuthGuard],component:AdmStudentComponent},
 {path:'stuudt',canActivate:[AuthGuard],component:UpdateStuComponent},
 {path:'traudt',canActivate:[AuthGuard],component:UpdateTraComponent},
-{path:'student/stuexams', component:ExamComponent},
-{path:'student/stuexams/exam1',component:Exam1Component},
-{path:'student/stuexams/exam2',component:Exam2Component},
-{path:'student/stufeedbacks',component:FeedbackComponent},
+{path:'student/stuexams',canActivate:[StudentAuthGuard], component:ExamComponent},
+{path:'student/stuexams/exam1',canActivate:[StudentAuthGuard],component:Exam1Component},
+{path:'student/stuexams/exam2',canActivate:[StudentAuthGuard],component:Exam2Component},
+{path:'student/stufeedbacks',canActivate:[StudentAuthGuard],component:FeedbackComponent},
 {path:'student',component:StudentComponent},
-{path:'student/lrngmaterials',component:LearningMaterialsComponent},
+{path:'student/lrngmaterials',canActivate:[StudentAuthGuard],component:LearningMaterialsComponent},
 {path:'courses',component:CoursesComponent},
+// admin
 {path:'admfsd',canActivate:[AuthGuard],component:AdminTraFsdComponent},
 {path:'admcsa',canActivate:[AuthGuard],component:AdminTraCsaComponent},
 {path:'adstfsd2',canActivate:[AuthGuard],component:AdminStuFsd02Component},
@@ -100,44 +102,45 @@ const routes: Routes = [
 {path:'adstdsa2',canActivate:[AuthGuard],component:AdminStuDsa02Component},
 {path:'adstcsa1',canActivate:[AuthGuard],component:AdminStuCsa1Component},
 {path:'adstcsa2',canActivate:[AuthGuard],component:AdminStuCsa2Component},
-{path:'student/course1',component:Course1Component},
-{path:'student/course2',component:Course2Component},
-{path:'student/course3',component:Course3Component,children:[{
-  path:'feedbacks3',component:Feedbacks3Component
+// student
+{path:'student/course1',canActivate:[StudentAuthGuard],component:Course1Component},
+{path:'student/course2',canActivate:[StudentAuthGuard],component:Course2Component},
+{path:'student/course3',canActivate:[StudentAuthGuard],component:Course3Component,children:[{
+  path:'feedbacks3',canActivate:[StudentAuthGuard],component:Feedbacks3Component
 }]},
-{path:'student/course4',component:Course4Component},
-{path:'student/course1/exam1',component:Exams1Component},
-{path:'student/course2/exam2',component:Exams2Component},
-{path:'student/course3/exam3',component:Exams3Component},
-{path:'student/course4/exam4',component:Exams4Component},
-{path:'student/course1/lrngmaterials1',component:Lrngmaterials1Component},
-{path:'student/course2/lrngmaterials2',component:Lrngmaterials2Component},
-{path:'student/course3/lrngmaterials3',component:Lrngmaterials3Component},
-{path:'student/course4/lrngmaterials4',component:Lrngmaterials4Component},
-{path:'student/course1/feedbacks1',component:Feedbacks1Component},
-{path:'student/course2/feedbacks2',component:Feedbacks2Component},
-{path:'student/course3/feedbacks3',component:Feedbacks3Component},
-{path:'student/course4/feedbacks4',component:Feedbacks4Component},
+{path:'student/course4',canActivate:[StudentAuthGuard],component:Course4Component},
+{path:'student/course1/exam1',canActivate:[StudentAuthGuard],component:Exams1Component},
+{path:'student/course2/exam2',canActivate:[StudentAuthGuard],component:Exams2Component},
+{path:'student/course3/exam3',canActivate:[StudentAuthGuard],component:Exams3Component},
+{path:'student/course4/exam4',canActivate:[StudentAuthGuard],component:Exams4Component},
+{path:'student/course1/lrngmaterials1',canActivate:[StudentAuthGuard],component:Lrngmaterials1Component},
+{path:'student/course2/lrngmaterials2',canActivate:[StudentAuthGuard],component:Lrngmaterials2Component},
+{path:'student/course3/lrngmaterials3',canActivate:[StudentAuthGuard],component:Lrngmaterials3Component},
+{path:'student/course4/lrngmaterials4',canActivate:[StudentAuthGuard],component:Lrngmaterials4Component},
+{path:'student/course1/feedbacks1',canActivate:[StudentAuthGuard],component:Feedbacks1Component},
+{path:'student/course2/feedbacks2',canActivate:[StudentAuthGuard],component:Feedbacks2Component},
+{path:'student/course3/feedbacks3',canActivate:[StudentAuthGuard],component:Feedbacks3Component},
+{path:'student/course4/feedbacks4',canActivate:[StudentAuthGuard],component:Feedbacks4Component},
 //  {path:'admhome',component:AdminMainComponent}
-{path:'admhome',component:AdminMainComponent},
+// {path:'admhome',component:AdminMainComponent},
 {path:'trainer/trainerhome',component:TrainerhomeComponent},
-{path:'trainer/fsdcourse',component:FsdcourseComponent},
-{path:'trainer/trainerlearningmaterials',component:TrainerlearningmaterialsComponent},
-{path:'trainer/trainerexams',component:TrainerexamsComponent},
-{path:'trainer/trainerfeedback',component:TrainerfeedbackComponent},
+{path:'trainer/fsdcourse',canActivate:[TrainerAuthGuard],component:FsdcourseComponent},
+{path:'trainer/trainerlearningmaterials',canActivate:[TrainerAuthGuard],component:TrainerlearningmaterialsComponent},
+{path:'trainer/trainerexams',canActivate:[TrainerAuthGuard],component:TrainerexamsComponent},
+{path:'trainer/trainerfeedback',canActivate:[TrainerAuthGuard],component:TrainerfeedbackComponent},
 {path:'trainer/htmlcssvideos',component:HtmlcssvideosComponent},
 {path:'trainer/jsvideos',component:JsvideosComponent},
 {path:'trainer/angvideo',component:AngvideoComponent},
-{path:'trainer/materiallist',component:MateriallistComponent},
-{path:'student/exam/welcome',component:WelcomeComponent},
-{path:'student/exam/question',component:QuestionComponent},
+{path:'trainer/materiallist',canActivate:[TrainerAuthGuard],component:MateriallistComponent},
+{path:'student/exam/welcome',canActivate:[TrainerAuthGuard],component:WelcomeComponent},
+{path:'student/exam/question',canActivate:[TrainerAuthGuard],component:QuestionComponent},
 // {path:'student/exam/examheader',component:ExamheaderComponent},
-{path:'trainerdsa',component:DSAcourseComponent},
-{path:'learmatedsa',component:LearningmaterialComponent},
-{path:'adddsalearmat',component:AdddsalearningmaterialComponent},
-{path:'trainercsa',component:CSAcourseComponent},
-{path:'learmatcsa',component:LearnigmaterialComponent},
-{path:'addcsalearmat',component:AddcsalearningmaterialComponent},
+{path:'trainerdsa',canActivate:[TrainerAuthGuard],component:DSAcourseComponent},
+{path:'learmatedsa',canActivate:[TrainerAuthGuard],component:LearningmaterialComponent},
+{path:'adddsalearmat',canActivate:[TrainerAuthGuard],component:AdddsalearningmaterialComponent},
+{path:'trainercsa',canActivate:[TrainerAuthGuard],component:CSAcourseComponent},
+{path:'learmatcsa',canActivate:[TrainerAuthGuard],component:LearnigmaterialComponent},
+{path:'addcsalearmat',canActivate:[TrainerAuthGuard],component:AddcsalearningmaterialComponent},
 
 ];
 
