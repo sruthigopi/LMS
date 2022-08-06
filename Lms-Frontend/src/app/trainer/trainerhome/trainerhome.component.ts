@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TestService } from 'src/app/test.service';
 
 @Component({
   selector: 'app-trainerhome',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class TrainerhomeComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,public testService:TestService) { }
 
   ngOnInit(): void {
   }

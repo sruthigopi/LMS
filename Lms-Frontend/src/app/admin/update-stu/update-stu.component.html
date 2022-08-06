@@ -51,7 +51,7 @@
                                 <td><label>Student Education</label></td>
                                 <td><input type="text" name="s_edu" #studentedu="ngModel" [style.width.px]=600 [(ngModel)]=" studentItem.studentedu"
                                     [class.is-invalid]="studentedu.invalid && studentedu.touched"
-                                    required pattern="[A-Za-z\s0-9\+.]{2,25}"
+                                   
                                     required>
                                     <small class="text-danger" [class.d-none]="studentedu.valid || studentedu.untouched">Enter valid qualification</small></td>
                               </tr>

@@ -11,8 +11,8 @@
         
        </ul>
       <form class="d-flex" role="search">
-        <!-- <button class="btn btn-outline-success" routerLink="/tralogin" type="submit" *ngIf="!authService.getTokenAdmin()">Login</button> -->
-        <button class="btn btn-outline-success" (click)="logoutTrainer()"  type="submit">Signout</button>
+        <button class="btn btn-outline-success" routerLink="/tralogin" type="submit" *ngIf="!testService.getTokenTrainer()">Login</button>
+        <button class="btn btn-outline-success" (click)="logoutTrainer()"  type="submit" *ngIf="testService.getTokenTrainer()">Signout</button>
       </form>
     </div>
   </div>

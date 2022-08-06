@@ -550,9 +550,9 @@ function approvemailtrainer(id){
                subject:'Account Approved',
                html:`<h2>Hi, ${trainer.trainername},</h2>
                <p><b>Your account for ict accademy trainer is approved.</b>
-               You are now a trainer of ${trainer.tracours} course, ${trainer.tracoubtch} batches.
+               You are now a registerd trainer of ICTK's ${trainer.tracours} course, ${trainer.tracoubtch} batches.
                Now you can login using your registerd email Id and password.</p>
-               check the below link to know more<a href="http://localhost:4200/tralogin">here</a>
+               check the below link to know more <a href="http://localhost:4200/tralogin">here</a>
 
                <p>Thanks for choosing ict accadamy,happy teaching and learning</p>`
               
