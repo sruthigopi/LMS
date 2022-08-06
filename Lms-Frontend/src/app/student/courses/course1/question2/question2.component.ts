@@ -100,6 +100,7 @@ resetQuiz()
   this.currentQuestion=0;
 }
 onTransfer(){
+  alert("submitted");
   this.router.navigate(['/trainer/trainerexams']);
 
 }

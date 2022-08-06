@@ -1,15 +1,13 @@
-import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { interval } from 'rxjs';
-import { QuestionService } from 'src/app/service/question.service';
+import { Question1dsaService } from 'src/app/service/question1dsa.service';
 
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  selector: 'app-question1ds',
+  templateUrl: './question1ds.component.html',
+  styleUrls: ['./question1ds.component.css']
 })
-export class QuestionComponent implements OnInit {
+export class Question1dsComponent implements OnInit {
 
   public questionList:any=[];
   public currentQuestion:number=0;
@@ -21,21 +19,18 @@ export class QuestionComponent implements OnInit {
   isQuizCompleted:boolean=false;
   public name:String="";
   public course:String="";
-  
 
-
-
-  constructor( private questionService:QuestionService,public router:Router) { }
+  constructor(private question1dsService:Question1dsaService) { }
 
   ngOnInit(): void {
-    
+
     this.name=localStorage.getItem("name")!;
-    // this.course=localStorage.getItem("course")!;
+    this.course=localStorage.getItem("course")!;
     this.getAllQuestions();
     this.startCounter();
   }
   getAllQuestions(){
-    this.questionService.getQuestionJson()
+    this.question1dsService.getQuestion1dsJson()
     .subscribe(res=>{
       // console.log(res.questions);
       this.questionList=res.questions;
@@ -101,10 +96,7 @@ resetQuiz()
   this.points=0;
   this.counter=60;
   this.currentQuestion=0;
-}
-onTransfer(){
-  
-  alert("submitted");
-  this.router.navigate(["trainer/trainerexams"])
-}
-}
+}}
+
+
+

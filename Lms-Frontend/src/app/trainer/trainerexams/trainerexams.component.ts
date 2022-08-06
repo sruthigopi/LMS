@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TrainerexamsComponent implements OnInit {
 
 
-  public questionList:any=[];
+  public questionList:any=[9];
   correctAnswer:number=0;
   incorrectAnswer:number=0;
   public points:number=0;

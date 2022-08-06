@@ -76,6 +76,12 @@ import { Welcome1Component } from './student/courses/course1/welcome1/welcome1.c
 import { Question1Component } from './student/courses/course1/question1/question1.component';
 import { Question2Component } from './student/courses/course1/question2/question2.component';
 import { Welcome2Component } from './student/courses/course1/welcome2/welcome2.component';
+import { Question1dsComponent } from './student/courses/course3/question1ds/question1ds.component';
+import { Welcome1dsComponent } from './student/courses/course3/welcome1ds/welcome1ds.component';
+import { Welcome2dsComponent } from './student/courses/course3/welcome2ds/welcome2ds.component';
+import { Welcome3dsComponent } from './student/courses/course3/welcome3ds/welcome3ds.component';
+import { Question2dsComponent } from './student/courses/course3/question2ds/question2ds.component';
+import { Question3dsComponent } from './student/courses/course3/question3ds/question3ds.component';
 
 
 
@@ -150,7 +156,14 @@ import { Welcome2Component } from './student/courses/course1/welcome2/welcome2.c
     Welcome1Component,
     Question1Component,
     Question2Component,
-    Welcome2Component
+    Welcome2Component,
+   
+    Question1dsComponent,
+    Welcome1dsComponent,
+    Welcome2dsComponent,
+    Welcome3dsComponent,
+    Question2dsComponent,
+    Question3dsComponent
     
 
   ],

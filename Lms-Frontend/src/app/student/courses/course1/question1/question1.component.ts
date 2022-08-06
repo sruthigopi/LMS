@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Question1Service } from 'src/app/service/question1.service';
 import { interval } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-question1',
@@ -21,7 +22,7 @@ export class Question1Component implements OnInit {
   public course:String="";
 
 
-  constructor(private question1Service:Question1Service) { }
+  constructor(private question1Service:Question1Service,public router:Router) { }
 
   ngOnInit(): void {
     this.name=localStorage.getItem("name")!;
@@ -96,4 +97,11 @@ resetQuiz()
   this.points=0;
   this.counter=60;
   this.currentQuestion=0;
-}}
+}
+
+onTransfer(){
+  
+  alert("submitted");
+  this.router.navigate(["trainer/trainerexams"])
+}
+}
