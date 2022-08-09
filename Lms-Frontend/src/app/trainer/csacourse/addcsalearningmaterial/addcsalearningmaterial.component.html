@@ -1,29 +1,29 @@
 <div class="back">
     <img class="img-fluid img" [src]="image1">
 <h1>Add Learning Material</h1>
-<form action="">
+<form action=""  #add="ngForm" (ngSubmit)="oSubmit()">
   <div class="card-body">
     <div class="table-responsive table-bordered">
     <table class="table">
       <tbody>
         <tr>
           <td> <label for="">TITLE</label></td>
-          <td><input type="text" name="title" [style.width.px]=600  [(ngModel)]="learningItem.title"></td>
+          <td><input type="text" name="title" [style.width.px]=600  [(ngModel)]="learningItem.title" required></td>
         </tr>
         <tr>
-          <td><label for="">MATERIAL (pdf/mp3/mp4)</label></td>
-          <td><input type="file" name="file" (change)="select($event)" [style.width.px]=600 ></td>
+          <td><label for="">MATERIAL</label></td>
+          <td><input type="file" name="file" (change)="select($event)" [style.width.px]=600 required></td>
         </tr>
         <tr>
           <td><label for="">LINK (url if any)</label></td>
-          <td><input name="url" [(ngModel)]="learningItem.url" type="text" [style.width.px]=600 ></td>
+          <td><input name="url" [(ngModel)]="learningItem.url" type="text" [style.width.px]=600 required></td>
         </tr>
         <tr>
           <td><label for="">DESCRIPTION</label></td>
-          <td><input type="text"  name="desc" [(ngModel)]="learningItem.desc" [style.width.px]=600 ></td>
+          <td><input type="text"  name="desc" [(ngModel)]="learningItem.desc" [style.width.px]=600 required></td>
         </tr>
         <td></td>
-        <button class="btn btn-success btn-lg" [style.width.px]=530 type="submit"  (click)="oSubmit()">submit</button>
+        <button class="btn btn-success btn-lg" [style.width.px]=530 type="submit"  [disabled]="add.form.invalid">submit</button>
       </tbody>
     </table>
     </div>
